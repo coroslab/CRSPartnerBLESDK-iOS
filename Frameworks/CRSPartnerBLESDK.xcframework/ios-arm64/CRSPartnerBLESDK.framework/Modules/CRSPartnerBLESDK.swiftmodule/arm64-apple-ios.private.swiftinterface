@@ -1,0 +1,240 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.3.2 effective-5.10 (swiftlang-6.3.2.1.108 clang-2100.1.1.101)
+// swift-module-flags: -target arm64-apple-ios14.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -O -enable-experimental-feature DebugDescriptionMacro -module-name CRSPartnerBLESDK -package-name crspartnerblesdk_ios
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.2
+import CommonCrypto
+@preconcurrency import CoreBluetooth
+import Foundation
+import Security
+import Swift
+import SwiftProtobuf
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_hasMissingDesignatedInitializers final public class CRSPartnerBLESDKClient : @unchecked Swift.Sendable {
+  public static let shared: CRSPartnerBLESDK.CRSPartnerBLESDKClient
+  convenience public init()
+  @objc deinit
+  final public func initialize(_ config: CRSPartnerBLESDK.CRSSdkInitConfig) throws
+  final public func logSnapshot() -> [CRSPartnerBLESDK.CRSLogEntry]
+  final public func clearLogs()
+  final public func currentLogFileURL() -> Foundation.URL?
+  final public func authorize(_ request: CRSPartnerBLESDK.CRSAuthorizationRequest = CRSAuthorizationRequest()) async throws -> CRSPartnerBLESDK.CRSAuthorizeResult
+  final public func handleOpenURL(_ url: Foundation.URL) async throws -> CRSPartnerBLESDK.CRSAuthorizeResult
+  final public func listAuthorizedDevices() async throws -> [CRSPartnerBLESDK.CRSAuthorizedDevice]
+  final public func revoke() async throws
+  @discardableResult
+  final public func startHeartBroadcast(sportStartUtc: Swift.UInt32, onSample: @escaping @Sendable (CRSPartnerBLESDK.CRSHrSample) -> Swift.Void) async throws -> CRSPartnerBLESDK.CRSHeartBroadcastResult
+}
+public enum CRSLogLevel : Swift.String, Swift.Equatable, Swift.Sendable {
+  case debug
+  case info
+  case warning
+  case error
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct CRSLogOptions : Swift.Equatable, Swift.Sendable {
+  public let isEnabled: Swift.Bool
+  public let printsToConsole: Swift.Bool
+  public let writesToFile: Swift.Bool
+  public let logFileName: Swift.String
+  public let maxStoredEntries: Swift.Int
+  public let minimumLevel: CRSPartnerBLESDK.CRSLogLevel
+  public init(isEnabled: Swift.Bool = false, printsToConsole: Swift.Bool = false, writesToFile: Swift.Bool = false, logFileName: Swift.String = "CRSPartnerBLESDK.log", maxStoredEntries: Swift.Int = 200, minimumLevel: CRSPartnerBLESDK.CRSLogLevel = .info)
+  public init(isEnabled: Swift.Bool = false, printsToConsole: Swift.Bool = false, maxStoredEntries: Swift.Int = 200, minimumLevel: CRSPartnerBLESDK.CRSLogLevel = .info)
+  public static let disabled: CRSPartnerBLESDK.CRSLogOptions
+  public static func == (a: CRSPartnerBLESDK.CRSLogOptions, b: CRSPartnerBLESDK.CRSLogOptions) -> Swift.Bool
+}
+public struct CRSLogEntry : Swift.Equatable, Swift.Sendable {
+  public let timestamp: Foundation.Date
+  public let level: CRSPartnerBLESDK.CRSLogLevel
+  public let category: Swift.String
+  public let message: Swift.String
+  public init(timestamp: Foundation.Date, level: CRSPartnerBLESDK.CRSLogLevel, category: Swift.String, message: Swift.String)
+  public var formattedTimestamp: Swift.String {
+    get
+  }
+  public static func == (a: CRSPartnerBLESDK.CRSLogEntry, b: CRSPartnerBLESDK.CRSLogEntry) -> Swift.Bool
+}
+public struct CRSSdkInitConfig : Swift.Equatable, Swift.Sendable {
+  public let clientId: Swift.String
+  public let partnerUserId: Swift.String
+  public let environment: CRSPartnerBLESDK.CRSServerEnvironmentType
+  public let logOptions: CRSPartnerBLESDK.CRSLogOptions
+  public init(clientId: Swift.String, partnerUserId: Swift.String, environment: CRSPartnerBLESDK.CRSServerEnvironmentType = .serverEnvironmentProduction, logOptions: CRSPartnerBLESDK.CRSLogOptions = .disabled)
+  public static func == (a: CRSPartnerBLESDK.CRSSdkInitConfig, b: CRSPartnerBLESDK.CRSSdkInitConfig) -> Swift.Bool
+}
+public struct CRSAuthorizationRequest : Swift.Equatable, Swift.Sendable {
+  public let scope: Swift.String
+  public init(scope: Swift.String = "ble.heart_broadcast")
+  public static func == (a: CRSPartnerBLESDK.CRSAuthorizationRequest, b: CRSPartnerBLESDK.CRSAuthorizationRequest) -> Swift.Bool
+}
+public struct CRSAuthorizeResult : Swift.Equatable, Swift.Sendable {
+  public let devices: [CRSPartnerBLESDK.CRSAuthorizedDevice]
+  public init(devices: [CRSPartnerBLESDK.CRSAuthorizedDevice])
+  public static func == (a: CRSPartnerBLESDK.CRSAuthorizeResult, b: CRSPartnerBLESDK.CRSAuthorizeResult) -> Swift.Bool
+}
+public struct CRSAuthorizedDevice : Swift.Equatable, Swift.Sendable {
+  public let deviceName: Swift.String
+  public let deviceModel: Swift.String
+  public let connectionState: CRSPartnerBLESDK.CRSDeviceConnectionState
+  public init(deviceName: Swift.String, deviceModel: Swift.String, connectionState: CRSPartnerBLESDK.CRSDeviceConnectionState)
+  public var deviceKey: CRSPartnerBLESDK.CRSDeviceKey {
+    get
+  }
+  public static func == (a: CRSPartnerBLESDK.CRSAuthorizedDevice, b: CRSPartnerBLESDK.CRSAuthorizedDevice) -> Swift.Bool
+}
+public struct CRSDeviceKey : Swift.Hashable, Swift.Sendable {
+  public let deviceName: Swift.String
+  public let deviceModel: Swift.String
+  public init(deviceName: Swift.String, deviceModel: Swift.String)
+  public static func == (a: CRSPartnerBLESDK.CRSDeviceKey, b: CRSPartnerBLESDK.CRSDeviceKey) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct CRSHeartBroadcastResult : Swift.Equatable, CRSPartnerBLESDK.CRSCancellable, Swift.Sendable {
+  public let protocolRet: Swift.UInt32
+  public init(protocolRet: Swift.UInt32)
+  public func stop()
+  public func cancel()
+  public static func == (lhs: CRSPartnerBLESDK.CRSHeartBroadcastResult, rhs: CRSPartnerBLESDK.CRSHeartBroadcastResult) -> Swift.Bool
+}
+public enum CRSDeviceConnectionState : Swift.Equatable, Swift.Sendable {
+  case disconnected
+  case connecting
+  case connected
+  case reconnecting
+  case rebindRequired
+  public static func == (a: CRSPartnerBLESDK.CRSDeviceConnectionState, b: CRSPartnerBLESDK.CRSDeviceConnectionState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct CRSSdkError : Swift.Error, Swift.Equatable, Swift.Sendable {
+  public let code: CRSPartnerBLESDK.CRSSdkErrorCode
+  public let message: Swift.String?
+  public let tLogId: Swift.String?
+  public init(code: CRSPartnerBLESDK.CRSSdkErrorCode, message: Swift.String? = nil, tLogId: Swift.String? = nil)
+  public static func == (a: CRSPartnerBLESDK.CRSSdkError, b: CRSPartnerBLESDK.CRSSdkError) -> Swift.Bool
+}
+public protocol CRSCancellable : Swift.Sendable {
+  func cancel()
+}
+final public class CRSAnyCancellable : CRSPartnerBLESDK.CRSCancellable, @unchecked Swift.Sendable {
+  public init(_ onCancel: @escaping () -> Swift.Void)
+  final public func cancel()
+  @objc deinit
+}
+public struct CRSHrmBroadcastSwitch {
+  public var onoff: Swift.UInt32
+  public var sportStartUtc: Swift.UInt32
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct CRSHrSample {
+  public var sportStartUtc: Swift.UInt32
+  public var timestampS: Swift.UInt32
+  public var heartRate: Swift.UInt32
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+extension CRSPartnerBLESDK.CRSHrmBroadcastSwitch : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: CRSPartnerBLESDK.CRSHrmBroadcastSwitch, rhs: CRSPartnerBLESDK.CRSHrmBroadcastSwitch) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension CRSPartnerBLESDK.CRSHrSample : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: CRSPartnerBLESDK.CRSHrSample, rhs: CRSPartnerBLESDK.CRSHrSample) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum CRSServerEnvironmentType : SwiftProtobuf.Enum {
+  public typealias RawValue = Swift.Int
+  case serverEnvironmentProduction
+  case serverEnvironmentTest
+  case UNRECOGNIZED(Swift.Int)
+  public init()
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension CRSPartnerBLESDK.CRSServerEnvironmentType : Swift.CaseIterable {
+  public static var allCases: [CRSPartnerBLESDK.CRSServerEnvironmentType]
+  public typealias AllCases = [CRSPartnerBLESDK.CRSServerEnvironmentType]
+}
+public enum CRSSdkErrorCode : SwiftProtobuf.Enum {
+  public typealias RawValue = Swift.Int
+  case ok
+  case invalidArgument
+  case notAuthorized
+  case deviceNotReady
+  case commandTimeout
+  case ackTimeout
+  case streamInterrupted
+  case rebindRequired
+  case permissionRevoked
+  case invalidPayload
+  case environmentMismatch
+  case bluetoothPoweredOff
+  case bluetoothUnauthorized
+  case watchUserExitLocked
+  case commandChannelAuthFailed
+  case internalError
+  case serverError
+  case serverLoginInvalid
+  case serverInvalidParameter
+  case serverNoData
+  case serverRateLimited
+  case serverInvalidContent
+  case serverInvalidClient
+  case serverInvalidScope
+  case serverExpired
+  case serverInvalidSignature
+  case serverKeyUnavailable
+  case serverExpiredKey
+  case serverUnauthorizedDevice
+  case serverDeviceDisconnected
+  case serverInvalidAuthorizedDevices
+  case serverUserDenied
+  case serverInvalidGrant
+  case serverGrantRevoked
+  case serverDeviceNotExist
+  case UNRECOGNIZED(Swift.Int)
+  public init()
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension CRSPartnerBLESDK.CRSSdkErrorCode : Swift.CaseIterable {
+  public static var allCases: [CRSPartnerBLESDK.CRSSdkErrorCode]
+  public typealias AllCases = [CRSPartnerBLESDK.CRSSdkErrorCode]
+}
+extension CRSPartnerBLESDK.CRSServerEnvironmentType : SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+}
+extension CRSPartnerBLESDK.CRSSdkErrorCode : SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+}
+extension CRSPartnerBLESDK.CRSLogLevel : Swift.Hashable {}
+extension CRSPartnerBLESDK.CRSLogLevel : Swift.RawRepresentable {}
+extension CRSPartnerBLESDK.CRSDeviceConnectionState : Swift.Hashable {}

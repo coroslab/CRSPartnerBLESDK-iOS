@@ -1,0 +1,986 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.3.2 effective-5.10 (swiftlang-6.3.2.1.108 clang-2100.1.1.101)
+// swift-module-flags: -target x86_64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -O -enable-experimental-feature DebugDescriptionMacro -module-name CRSPartnerBLESDK -package-name crspartnerblesdk_ios
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.2
+import CommonCrypto
+@preconcurrency import CoreBluetooth
+import Foundation
+import Security
+import Swift
+import SwiftProtobuf
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_hasMissingDesignatedInitializers final public class CRSPartnerBLESDKClient : @unchecked Swift.Sendable {
+  public static let shared: CRSPartnerBLESDK.CRSPartnerBLESDKClient
+  convenience public init()
+  package init(authorizationService: any CRSPartnerBLESDK.CRSAuthorizationService, bleService: any CRSPartnerBLESDK.CRSBLECommandService, grantStore: any CRSPartnerBLESDK.CRSGrantStore, openURL: @escaping (Foundation.URL) async -> Swift.Bool = CRSPartnerBLESDKClient.defaultOpenURL(_:))
+  @objc deinit
+  final public func initialize(_ config: CRSPartnerBLESDK.CRSSdkInitConfig) throws
+  final public func logSnapshot() -> [CRSPartnerBLESDK.CRSLogEntry]
+  final public func clearLogs()
+  final public func currentLogFileURL() -> Foundation.URL?
+  final package func checkAuthorizationRefreshIfNeeded(reason: Swift.String = "manual") async
+  final public func authorize(_ request: CRSPartnerBLESDK.CRSAuthorizationRequest = CRSAuthorizationRequest()) async throws -> CRSPartnerBLESDK.CRSAuthorizeResult
+  final public func handleOpenURL(_ url: Foundation.URL) async throws -> CRSPartnerBLESDK.CRSAuthorizeResult
+  final public func listAuthorizedDevices() async throws -> [CRSPartnerBLESDK.CRSAuthorizedDevice]
+  final public func revoke() async throws
+  @discardableResult
+  final public func startHeartBroadcast(sportStartUtc: Swift.UInt32, onSample: @escaping @Sendable (CRSPartnerBLESDK.CRSHrSample) -> Swift.Void) async throws -> CRSPartnerBLESDK.CRSHeartBroadcastResult
+  @discardableResult
+  final package func startHeartBroadcast(deviceKey: CRSPartnerBLESDK.CRSDeviceKey, sportStartUtc: Swift.UInt32) async throws -> CRSPartnerBLESDK.CRSHeartBroadcastResult
+  @discardableResult
+  final package func stopHeartBroadcast(deviceKey: CRSPartnerBLESDK.CRSDeviceKey, sportStartUtc: Swift.UInt32) async throws -> CRSPartnerBLESDK.CRSHeartBroadcastResult
+  package static func defaultOpenURL(_ url: Foundation.URL) async -> Swift.Bool
+}
+package protocol CRSBLECommand : Swift.Sendable {
+  associatedtype Response : Swift.Sendable
+  var commandId: Swift.UInt32 { get }
+  func makeMasterSend() throws -> CRSPartnerBLESDK.CRSMasterSend
+  func parseResponse(from ack: CRSPartnerBLESDK.CRSSlaveAck) throws -> Self.Response
+}
+package struct CRSBLEAckResponse : Swift.Sendable {
+  package let ack: CRSPartnerBLESDK.CRSSlaveAck
+  package let protocolRet: Swift.UInt32
+  package init(ack: CRSPartnerBLESDK.CRSSlaveAck, protocolRet: Swift.UInt32)
+}
+package struct CRSHeartBroadcastCommand : CRSPartnerBLESDK.CRSBLECommand {
+  package let on: Swift.Bool
+  package let sportStartUtc: Swift.UInt32
+  package init(on: Swift.Bool, sportStartUtc: Swift.UInt32)
+  package var commandId: Swift.UInt32 {
+    get
+  }
+  package func makeMasterSend() throws -> CRSPartnerBLESDK.CRSMasterSend
+  package func parseResponse(from ack: CRSPartnerBLESDK.CRSSlaveAck) throws -> CRSPartnerBLESDK.CRSBLEAckResponse
+  package typealias Response = CRSPartnerBLESDK.CRSBLEAckResponse
+}
+package actor CRSBLECommandExecutor {
+  package init(channel: CRSPartnerBLESDK.CRSCommandChannel)
+  package func send<Command>(_ command: Command, to deviceKey: CRSPartnerBLESDK.CRSDeviceKey, packetSize: Swift.Int? = nil) async throws -> Command.Response where Command : CRSPartnerBLESDK.CRSBLECommand
+  package func sendMasterSend(_ command: CRSPartnerBLESDK.CRSMasterSend, to deviceKey: CRSPartnerBLESDK.CRSDeviceKey) async throws -> CRSPartnerBLESDK.CRSSlaveAck
+  package func sendMasterSend(_ command: CRSPartnerBLESDK.CRSMasterSend, to deviceKey: CRSPartnerBLESDK.CRSDeviceKey, packetSize: Swift.Int) async throws -> CRSPartnerBLESDK.CRSSlaveAck
+  @objc deinit
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  @_semantics("defaultActor") nonisolated final package var unownedExecutor: _Concurrency.UnownedSerialExecutor {
+    get
+  }
+}
+package struct CRSBLEFrameCodec : Swift.Sendable {
+  package static let masterCommand: Swift.UInt8
+  package static let deviceCommand: Swift.UInt8
+  package let packageSize: Swift.Int
+  package let headerSize: Swift.Int
+  package let usesChecksum: Swift.Bool
+  package init(packageSize: Swift.Int = 20, headerSize: Swift.Int = 2, usesChecksum: Swift.Bool = true)
+  package func encode(payload: Foundation.Data, command: Swift.UInt8 = Self.masterCommand) throws -> [Foundation.Data]
+  package func decode(frame: Foundation.Data, expectedCommand: Swift.UInt8 = Self.masterCommand) throws -> CRSPartnerBLESDK.CRSBLEFramePart
+  package func decodeAny(frame: Foundation.Data) throws -> CRSPartnerBLESDK.CRSBLEFramePart
+  package func appendChecksumIfNeeded(to payload: Foundation.Data) -> Foundation.Data
+  package func stripAndValidateChecksumIfNeeded(from commandData: Foundation.Data) throws -> Foundation.Data
+  package static func checksum(for data: Foundation.Data) -> Swift.UInt8
+}
+package struct CRSBLEFramePart : Swift.Equatable, Swift.Sendable {
+  package let frameCommand: Swift.UInt8
+  package let leftPackageNum: Swift.Int
+  package let payload: Foundation.Data
+  package init(frameCommand: Swift.UInt8 = CRSBLEFrameCodec.masterCommand, leftPackageNum: Swift.Int, payload: Foundation.Data)
+  package static func == (a: CRSPartnerBLESDK.CRSBLEFramePart, b: CRSPartnerBLESDK.CRSBLEFramePart) -> Swift.Bool
+}
+package struct CRSBLEFrameAssembler : Swift.Sendable {
+  package init(codec: CRSPartnerBLESDK.CRSBLEFrameCodec = CRSBLEFrameCodec())
+  package mutating func append(_ part: CRSPartnerBLESDK.CRSBLEFramePart) throws -> Foundation.Data?
+}
+package actor CRSBLEPacketRouter {
+  package typealias InboundHandler = @Sendable (Foundation.Data) -> Swift.Void
+  package init(codec: CRSPartnerBLESDK.CRSBLEFrameCodec = CRSBLEFrameCodec())
+  package func setInboundHandler(_ handler: CRSPartnerBLESDK.CRSBLEPacketRouter.InboundHandler?)
+  package func waitForResponse(timeoutNanoseconds: Swift.UInt64) async throws -> Foundation.Data
+  package func receive(frame: Foundation.Data)
+  package func failPending(_ error: any Swift.Error)
+  @objc deinit
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  @_semantics("defaultActor") nonisolated final package var unownedExecutor: _Concurrency.UnownedSerialExecutor {
+    get
+  }
+}
+package struct CRSCommandRetryPolicy : Swift.Sendable {
+  package let timeoutNanoseconds: Swift.UInt64
+  package let maxAttempts: Swift.Int
+  package init(timeoutNanoseconds: Swift.UInt64 = 5_000_000_000, maxAttempts: Swift.Int = 3)
+}
+package protocol CRSCommandTransport : Swift.Sendable {
+  func maximumWritePacketSize(to deviceKey: CRSPartnerBLESDK.CRSDeviceKey) async throws -> Swift.Int
+  func write(frames: [Foundation.Data], to deviceKey: CRSPartnerBLESDK.CRSDeviceKey) async throws
+  func waitForAck(deviceKey: CRSPartnerBLESDK.CRSDeviceKey, timeoutNanoseconds: Swift.UInt64) async throws -> Foundation.Data
+}
+extension CRSPartnerBLESDK.CRSCommandTransport {
+  package func maximumWritePacketSize(to deviceKey: CRSPartnerBLESDK.CRSDeviceKey) async throws -> Swift.Int
+}
+package actor CRSCommandChannel {
+  package init(transport: any CRSPartnerBLESDK.CRSCommandTransport, codec: CRSPartnerBLESDK.CRSBLEFrameCodec = CRSBLEFrameCodec(), retryPolicy: CRSPartnerBLESDK.CRSCommandRetryPolicy = CRSCommandRetryPolicy())
+  package func send(command: CRSPartnerBLESDK.CRSMasterSend, to deviceKey: CRSPartnerBLESDK.CRSDeviceKey) async throws -> CRSPartnerBLESDK.CRSSlaveAck
+  package func send(command: CRSPartnerBLESDK.CRSMasterSend, to deviceKey: CRSPartnerBLESDK.CRSDeviceKey, packetSize: Swift.Int) async throws -> CRSPartnerBLESDK.CRSSlaveAck
+  @objc deinit
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  @_semantics("defaultActor") nonisolated final package var unownedExecutor: _Concurrency.UnownedSerialExecutor {
+    get
+  }
+}
+final package class CRSCoreBluetoothCommandService : CRSPartnerBLESDK.CRSBLECommandService, @unchecked Swift.Sendable {
+  package init(identityProvider: any CRSPartnerBLESDK.CRSPeripheralIdentityResolving = CRSBLENameIdentityProvider())
+  final package func assertBluetoothReady() async throws
+  final package func connectedSnapshot() async -> [CRSPartnerBLESDK.CRSConnectedDeviceSnapshot]
+  final package func send(command: CRSPartnerBLESDK.CRSMasterSend, to deviceKey: CRSPartnerBLESDK.CRSDeviceKey) async throws -> CRSPartnerBLESDK.CRSSlaveAck
+  final package func send(command: CRSPartnerBLESDK.CRSMasterSend, to deviceKey: CRSPartnerBLESDK.CRSDeviceKey, packetSize: Swift.Int) async throws -> CRSPartnerBLESDK.CRSSlaveAck
+  final package func send<Command>(_ command: Command, to deviceKey: CRSPartnerBLESDK.CRSDeviceKey, packetSize: Swift.Int? = nil) async throws -> Command.Response where Command : CRSPartnerBLESDK.CRSBLECommand
+  final package func subscribeHeartRate(deviceKey: CRSPartnerBLESDK.CRSDeviceKey, sportStartUtc: Swift.UInt32, handler: @escaping @Sendable (CRSPartnerBLESDK.CRSHrSample) -> Swift.Void) async throws -> any CRSPartnerBLESDK.CRSCancellable
+  @objc deinit
+}
+@objc final package class CRSCoreBluetoothTransport : ObjectiveC.NSObject, CRSPartnerBLESDK.CRSCommandTransport, @unchecked Swift.Sendable {
+  package init(identityProvider: any CRSPartnerBLESDK.CRSPeripheralIdentityResolving = CRSBLENameIdentityProvider())
+  final package func assertBluetoothReady() async throws
+  final package func connectedSnapshot() async -> [CRSPartnerBLESDK.CRSConnectedDeviceSnapshot]
+  final package func maximumWritePacketSize(to deviceKey: CRSPartnerBLESDK.CRSDeviceKey) async throws -> Swift.Int
+  final package func write(frames: [Foundation.Data], to deviceKey: CRSPartnerBLESDK.CRSDeviceKey) async throws
+  final package func waitForAck(deviceKey: CRSPartnerBLESDK.CRSDeviceKey, timeoutNanoseconds: Swift.UInt64) async throws -> Foundation.Data
+  final package func subscribeHeartRate(deviceKey: CRSPartnerBLESDK.CRSDeviceKey, sportStartUtc: Swift.UInt32, handler: @escaping @Sendable (CRSPartnerBLESDK.CRSHrSample) -> Swift.Void) async throws -> any CRSPartnerBLESDK.CRSCancellable
+  @objc deinit
+}
+extension CRSPartnerBLESDK.CRSCoreBluetoothTransport : CoreBluetooth.CBCentralManagerDelegate {
+  @objc final package func centralManagerDidUpdateState(_ central: CoreBluetooth.CBCentralManager)
+  @objc final package func centralManager(_ central: CoreBluetooth.CBCentralManager, didConnect peripheral: CoreBluetooth.CBPeripheral)
+  @objc final package func centralManager(_ central: CoreBluetooth.CBCentralManager, didFailToConnect peripheral: CoreBluetooth.CBPeripheral, error: (any Swift.Error)?)
+  @objc final package func centralManager(_ central: CoreBluetooth.CBCentralManager, didDisconnectPeripheral peripheral: CoreBluetooth.CBPeripheral, error: (any Swift.Error)?)
+}
+extension CRSPartnerBLESDK.CRSCoreBluetoothTransport : CoreBluetooth.CBPeripheralDelegate {
+  @objc final package func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didDiscoverServices error: (any Swift.Error)?)
+  @objc final package func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didDiscoverCharacteristicsFor service: CoreBluetooth.CBService, error: (any Swift.Error)?)
+  @objc final package func peripheral(_ peripheral: CoreBluetooth.CBPeripheral, didUpdateValueFor characteristic: CoreBluetooth.CBCharacteristic, error: (any Swift.Error)?)
+}
+package protocol CRSPeripheralIdentityResolving : Swift.Sendable {
+  func resolveIdentity(from peripheral: CoreBluetooth.CBPeripheral) -> CRSPartnerBLESDK.CRSPeripheralIdentity?
+}
+package struct CRSBLENameIdentityProvider : CRSPartnerBLESDK.CRSPeripheralIdentityResolving {
+  package init()
+  package func resolveIdentity(from peripheral: CoreBluetooth.CBPeripheral) -> CRSPartnerBLESDK.CRSPeripheralIdentity?
+  package func resolveIdentity(fromBLEName name: Swift.String) -> CRSPartnerBLESDK.CRSPeripheralIdentity?
+}
+package struct CRSManualDeviceIdentityProvider : CRSPartnerBLESDK.CRSPeripheralIdentityResolving {
+  package init(deviceName: Swift.String)
+  package func resolveIdentity(from peripheral: CoreBluetooth.CBPeripheral) -> CRSPartnerBLESDK.CRSPeripheralIdentity?
+  package func matches(peripheralName: Swift.String?) -> Swift.Bool
+}
+package actor CRSMockBLECommandService : CRSPartnerBLESDK.CRSBLECommandService {
+  package enum SendBehavior : Swift.Sendable {
+    case ackSuccess
+    case ackTimeout
+    case commandTimeout
+    package static func == (a: CRSPartnerBLESDK.CRSMockBLECommandService.SendBehavior, b: CRSPartnerBLESDK.CRSMockBLECommandService.SendBehavior) -> Swift.Bool
+    package func hash(into hasher: inout Swift.Hasher)
+    package var hashValue: Swift.Int {
+      get
+    }
+  }
+  package init(deviceKey: CRSPartnerBLESDK.CRSDeviceKey = CRSDeviceKey(deviceId: "MOCK_DEVICE_ID", deviceModel: "PACE_PRO"), peripheralIdentifier: Foundation.UUID = UUID(), sendBehavior: CRSPartnerBLESDK.CRSMockBLECommandService.SendBehavior = .ackSuccess)
+  package func setSendBehavior(_ behavior: CRSPartnerBLESDK.CRSMockBLECommandService.SendBehavior)
+  package func connectedSnapshot() async -> [CRSPartnerBLESDK.CRSConnectedDeviceSnapshot]
+  package func send(command: CRSPartnerBLESDK.CRSMasterSend, to deviceKey: CRSPartnerBLESDK.CRSDeviceKey) async throws -> CRSPartnerBLESDK.CRSSlaveAck
+  package func subscribeHeartRate(deviceKey: CRSPartnerBLESDK.CRSDeviceKey, sportStartUtc: Swift.UInt32, handler: @escaping @Sendable (CRSPartnerBLESDK.CRSHrSample) -> Swift.Void) async throws -> any CRSPartnerBLESDK.CRSCancellable
+  @objc deinit
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  @_semantics("defaultActor") nonisolated final package var unownedExecutor: _Concurrency.UnownedSerialExecutor {
+    get
+  }
+}
+package enum CRSPartnerBLEUUID {
+  package static let commandService: Swift.String
+  package static let commandWriteCharacteristic: Swift.String
+  package static let commandReadCharacteristic: Swift.String
+  package static let deviceInfoService: Swift.String
+  package static let deviceModelCharacteristic: Swift.String
+  package static let deviceUuidCharacteristic: Swift.String
+  package static let heartRateService: Swift.String
+  package static let heartRateMeasurementCharacteristic: Swift.String
+}
+final package class CRSAuthorizationCoordinator : @unchecked Swift.Sendable {
+  package init(authorizationService: any CRSPartnerBLESDK.CRSAuthorizationService, grantStore: any CRSPartnerBLESDK.CRSGrantStore)
+  final package func initialize(_ config: CRSPartnerBLESDK.CRSSdkInitConfig) throws
+  final package func clearStateIfEnvironmentChanged() async throws
+  final package func authorize(_ request: CRSPartnerBLESDK.CRSAuthorizationRequest) async throws -> CRSPartnerBLESDK.CRSAuthorizationResult
+  final package func handleOpenURL(_ url: Foundation.URL) async throws -> CRSPartnerBLESDK.CRSAuthorizationResult
+  final package func listAuthorizedDevices() async throws -> [CRSPartnerBLESDK.CRSAuthorizedDevice]
+  final package func currentGrant() async throws -> CRSPartnerBLESDK.CRSGrantCacheRecord
+  final package func updateCachedDevices(_ devices: [CRSPartnerBLESDK.CRSAuthorizedDevice]) async throws -> CRSPartnerBLESDK.CRSAuthorizationResult
+  final package func currentGrantForCommand(nowSec: Swift.UInt64 = UInt64(Date().timeIntervalSince1970)) async throws -> CRSPartnerBLESDK.CRSGrantCacheRecord
+  final package func refreshCachedGrantIfNeeded(nowSec: Swift.UInt64 = UInt64(Date().timeIntervalSince1970)) async throws -> CRSPartnerBLESDK.CRSGrantCacheRecord?
+  final package func revokeCurrent() async throws
+  final package func revoke(grantId: Swift.String) async throws
+  @objc deinit
+}
+package enum CRSHeartBroadcastState : Swift.Equatable, Swift.Sendable {
+  case idle
+  case starting
+  case streaming
+  case stopping
+  case waitingRebind
+  case stopped
+  package static func == (a: CRSPartnerBLESDK.CRSHeartBroadcastState, b: CRSPartnerBLESDK.CRSHeartBroadcastState) -> Swift.Bool
+  package func hash(into hasher: inout Swift.Hasher)
+  package var hashValue: Swift.Int {
+    get
+  }
+}
+package actor CRSHeartBroadcastSessionManager {
+  package init(bleService: any CRSPartnerBLESDK.CRSBLECommandService, keepaliveIntervalNanoseconds: Swift.UInt64 = 60_000_000_000)
+  package func currentState() -> CRSPartnerBLESDK.CRSHeartBroadcastState
+  package func activeSportStartUtc(for deviceKey: CRSPartnerBLESDK.CRSDeviceKey) -> Swift.UInt32?
+  @discardableResult
+  package func start(deviceKey: CRSPartnerBLESDK.CRSDeviceKey, sportStartUtc: Swift.UInt32, packetSize: Swift.Int? = nil) async throws -> Swift.UInt32
+  @discardableResult
+  package func stop(deviceKey: CRSPartnerBLESDK.CRSDeviceKey, sportStartUtc: Swift.UInt32, packetSize: Swift.Int? = nil) async throws -> Swift.UInt32
+  package func markWatchManualExit(sportStartUtc: Swift.UInt32)
+  package func markRebindRequired()
+  @objc deinit
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  @_semantics("defaultActor") nonisolated final package var unownedExecutor: _Concurrency.UnownedSerialExecutor {
+    get
+  }
+}
+public enum CRSLogLevel : Swift.String, Swift.Equatable, Swift.Sendable {
+  case debug
+  case info
+  case warning
+  case error
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct CRSLogOptions : Swift.Equatable, Swift.Sendable {
+  public let isEnabled: Swift.Bool
+  public let printsToConsole: Swift.Bool
+  public let writesToFile: Swift.Bool
+  public let logFileName: Swift.String
+  public let maxStoredEntries: Swift.Int
+  public let minimumLevel: CRSPartnerBLESDK.CRSLogLevel
+  public init(isEnabled: Swift.Bool = false, printsToConsole: Swift.Bool = false, writesToFile: Swift.Bool = false, logFileName: Swift.String = "CRSPartnerBLESDK.log", maxStoredEntries: Swift.Int = 200, minimumLevel: CRSPartnerBLESDK.CRSLogLevel = .info)
+  public init(isEnabled: Swift.Bool = false, printsToConsole: Swift.Bool = false, maxStoredEntries: Swift.Int = 200, minimumLevel: CRSPartnerBLESDK.CRSLogLevel = .info)
+  public static let disabled: CRSPartnerBLESDK.CRSLogOptions
+  public static func == (a: CRSPartnerBLESDK.CRSLogOptions, b: CRSPartnerBLESDK.CRSLogOptions) -> Swift.Bool
+}
+public struct CRSLogEntry : Swift.Equatable, Swift.Sendable {
+  public let timestamp: Foundation.Date
+  public let level: CRSPartnerBLESDK.CRSLogLevel
+  public let category: Swift.String
+  public let message: Swift.String
+  public init(timestamp: Foundation.Date, level: CRSPartnerBLESDK.CRSLogLevel, category: Swift.String, message: Swift.String)
+  public var formattedTimestamp: Swift.String {
+    get
+  }
+  public static func == (a: CRSPartnerBLESDK.CRSLogEntry, b: CRSPartnerBLESDK.CRSLogEntry) -> Swift.Bool
+}
+package enum CRSSdkLogger {
+  package static func configure(_ newOptions: CRSPartnerBLESDK.CRSLogOptions)
+  package static func snapshot() -> [CRSPartnerBLESDK.CRSLogEntry]
+  package static func currentLogFileURL() -> Foundation.URL?
+  package static func clear()
+  package static func log(_ level: CRSPartnerBLESDK.CRSLogLevel, category: Swift.String, _ message: @autoclosure () -> Swift.String)
+  package static func formatTimestamp(_ date: Foundation.Date) -> Swift.String
+}
+package protocol CRSAuthorizationService : Swift.Sendable {
+  func authorize(config: CRSPartnerBLESDK.CRSSdkInitConfig, request: CRSPartnerBLESDK.CRSAuthorizationRequest, authorizedDevices: [CRSPartnerBLESDK.CRSAuthorizedDevice]) async throws -> CRSPartnerBLESDK.CRSAuthorizationResult
+  func refresh(config: CRSPartnerBLESDK.CRSSdkInitConfig, cache: CRSPartnerBLESDK.CRSGrantCacheRecord) async throws -> CRSPartnerBLESDK.CRSAuthorizationResult
+  func revoke(config: CRSPartnerBLESDK.CRSSdkInitConfig, grantId: Swift.String) async throws
+  func authorizationResult(fromCallbackURL url: Foundation.URL, config: CRSPartnerBLESDK.CRSSdkInitConfig) async throws -> CRSPartnerBLESDK.CRSAuthorizationResult?
+  func clearLocalAuthorizationState(clientId: Swift.String) async
+}
+package protocol CRSGrantStore : Swift.Sendable {
+  func load(environment: CRSPartnerBLESDK.CRSServerEnvironmentType, clientId: Swift.String) async throws -> CRSPartnerBLESDK.CRSGrantCacheRecord?
+  func save(_ record: CRSPartnerBLESDK.CRSGrantCacheRecord) async throws
+  func clear(environment: CRSPartnerBLESDK.CRSServerEnvironmentType, clientId: Swift.String) async throws
+}
+extension CRSPartnerBLESDK.CRSGrantStore {
+  package func clearAllEnvironments(clientId: Swift.String) async throws
+}
+package protocol CRSBLECommandService : Swift.Sendable {
+  func assertBluetoothReady() async throws
+  func connectedSnapshot() async -> [CRSPartnerBLESDK.CRSConnectedDeviceSnapshot]
+  func send(command: CRSPartnerBLESDK.CRSMasterSend, to deviceKey: CRSPartnerBLESDK.CRSDeviceKey) async throws -> CRSPartnerBLESDK.CRSSlaveAck
+  func send(command: CRSPartnerBLESDK.CRSMasterSend, to deviceKey: CRSPartnerBLESDK.CRSDeviceKey, packetSize: Swift.Int) async throws -> CRSPartnerBLESDK.CRSSlaveAck
+  func subscribeHeartRate(deviceKey: CRSPartnerBLESDK.CRSDeviceKey, sportStartUtc: Swift.UInt32, handler: @escaping @Sendable (CRSPartnerBLESDK.CRSHrSample) -> Swift.Void) async throws -> any CRSPartnerBLESDK.CRSCancellable
+}
+extension CRSPartnerBLESDK.CRSBLECommandService {
+  package func assertBluetoothReady() async throws
+  package func send(command: CRSPartnerBLESDK.CRSMasterSend, to deviceKey: CRSPartnerBLESDK.CRSDeviceKey, packetSize: Swift.Int) async throws -> CRSPartnerBLESDK.CRSSlaveAck
+}
+package struct CRSConnectedDeviceSnapshot : Swift.Equatable, Swift.Sendable {
+  package let identity: CRSPartnerBLESDK.CRSPeripheralIdentity?
+  package let displayName: Swift.String
+  package let peripheralIdentifier: Foundation.UUID
+  package let connectionState: CRSPartnerBLESDK.CRSDeviceConnectionState
+  package let services: [Swift.String]
+  package init(identity: CRSPartnerBLESDK.CRSPeripheralIdentity?, displayName: Swift.String, peripheralIdentifier: Foundation.UUID, connectionState: CRSPartnerBLESDK.CRSDeviceConnectionState, services: [Swift.String])
+  package static func == (a: CRSPartnerBLESDK.CRSConnectedDeviceSnapshot, b: CRSPartnerBLESDK.CRSConnectedDeviceSnapshot) -> Swift.Bool
+}
+package struct CRSPeripheralIdentity : Swift.Equatable, Swift.Sendable {
+  package let deviceKey: CRSPartnerBLESDK.CRSDeviceKey
+  package let deviceUuid: Swift.String?
+  package let source: CRSPartnerBLESDK.CRSPeripheralIdentitySource
+  package init(deviceKey: CRSPartnerBLESDK.CRSDeviceKey, deviceUuid: Swift.String?, source: CRSPartnerBLESDK.CRSPeripheralIdentitySource)
+  package static func == (a: CRSPartnerBLESDK.CRSPeripheralIdentity, b: CRSPartnerBLESDK.CRSPeripheralIdentity) -> Swift.Bool
+}
+package enum CRSPeripheralIdentitySource : Swift.Equatable, Swift.Sendable {
+  case corosBleNameAndDeviceInfo
+  case verifiedLocalBinding
+  package static func == (a: CRSPartnerBLESDK.CRSPeripheralIdentitySource, b: CRSPartnerBLESDK.CRSPeripheralIdentitySource) -> Swift.Bool
+  package func hash(into hasher: inout Swift.Hasher)
+  package var hashValue: Swift.Int {
+    get
+  }
+}
+package struct CRSGrantCacheRecord : Swift.Equatable, Swift.Sendable {
+  package let environment: CRSPartnerBLESDK.CRSServerEnvironmentType
+  package let clientId: Swift.String
+  package let grantId: Swift.String
+  package let partnerUserId: Swift.String
+  package let userId: Swift.String
+  package let devices: [CRSPartnerBLESDK.CRSAuthorizedDevice]
+  package let expireAtSec: Swift.UInt64
+  package let refreshExpireAtSec: Swift.UInt64
+  package let corosOpenHost: Swift.String
+  package init(environment: CRSPartnerBLESDK.CRSServerEnvironmentType, clientId: Swift.String, grantId: Swift.String, partnerUserId: Swift.String, userId: Swift.String, devices: [CRSPartnerBLESDK.CRSAuthorizedDevice], expireAtSec: Swift.UInt64, refreshExpireAtSec: Swift.UInt64, corosOpenHost: Swift.String)
+  package init(config: CRSPartnerBLESDK.CRSSdkInitConfig, result: CRSPartnerBLESDK.CRSAuthorizationResult)
+  package var authorizationResult: CRSPartnerBLESDK.CRSAuthorizationResult {
+    get
+  }
+  package static func == (a: CRSPartnerBLESDK.CRSGrantCacheRecord, b: CRSPartnerBLESDK.CRSGrantCacheRecord) -> Swift.Bool
+}
+package enum CRSErrorMapping {
+  package static func serverCode(apiCode: Swift.String) -> CRSPartnerBLESDK.CRSSdkErrorCode
+  package static func validateEnvelope(apiCode: Swift.String, result: Swift.String, tLogId: Swift.String? = nil) throws
+}
+package enum CRSHeartBroadcastBuilder {
+  package static func makeCommand(on: Swift.Bool, sportStartUtc: Swift.UInt32) throws -> CRSPartnerBLESDK.CRSMasterSend
+  package static func protocolRet(from ack: CRSPartnerBLESDK.CRSSlaveAck) throws -> Swift.UInt32
+}
+public struct CRSSdkInitConfig : Swift.Equatable, Swift.Sendable {
+  public let clientId: Swift.String
+  public let partnerUserId: Swift.String
+  public let environment: CRSPartnerBLESDK.CRSServerEnvironmentType
+  public let logOptions: CRSPartnerBLESDK.CRSLogOptions
+  public init(clientId: Swift.String, partnerUserId: Swift.String, environment: CRSPartnerBLESDK.CRSServerEnvironmentType = .serverEnvironmentProduction, logOptions: CRSPartnerBLESDK.CRSLogOptions = .disabled)
+  public static func == (a: CRSPartnerBLESDK.CRSSdkInitConfig, b: CRSPartnerBLESDK.CRSSdkInitConfig) -> Swift.Bool
+}
+public struct CRSAuthorizationRequest : Swift.Equatable, Swift.Sendable {
+  public let scope: Swift.String
+  public init(scope: Swift.String = "ble.heart_broadcast")
+  public static func == (a: CRSPartnerBLESDK.CRSAuthorizationRequest, b: CRSPartnerBLESDK.CRSAuthorizationRequest) -> Swift.Bool
+}
+public struct CRSAuthorizeResult : Swift.Equatable, Swift.Sendable {
+  public let devices: [CRSPartnerBLESDK.CRSAuthorizedDevice]
+  public init(devices: [CRSPartnerBLESDK.CRSAuthorizedDevice])
+  public static func == (a: CRSPartnerBLESDK.CRSAuthorizeResult, b: CRSPartnerBLESDK.CRSAuthorizeResult) -> Swift.Bool
+}
+package struct CRSAuthorizationResult : Swift.Equatable, Swift.Sendable {
+  package let environment: CRSPartnerBLESDK.CRSServerEnvironmentType
+  package let grantId: Swift.String
+  package let partnerUserId: Swift.String
+  package let userId: Swift.String
+  package let devices: [CRSPartnerBLESDK.CRSAuthorizedDevice]
+  package let expireAtSec: Swift.UInt64
+  package let refreshExpireAtSec: Swift.UInt64
+  package let corosOpenHost: Swift.String
+  package init(environment: CRSPartnerBLESDK.CRSServerEnvironmentType, grantId: Swift.String, partnerUserId: Swift.String, userId: Swift.String, devices: [CRSPartnerBLESDK.CRSAuthorizedDevice], expireAtSec: Swift.UInt64, refreshExpireAtSec: Swift.UInt64, corosOpenHost: Swift.String)
+  package var publicResult: CRSPartnerBLESDK.CRSAuthorizeResult {
+    get
+  }
+  package static func == (a: CRSPartnerBLESDK.CRSAuthorizationResult, b: CRSPartnerBLESDK.CRSAuthorizationResult) -> Swift.Bool
+}
+public struct CRSAuthorizedDevice : Swift.Equatable, Swift.Sendable {
+  public let deviceName: Swift.String
+  public let deviceModel: Swift.String
+  public let connectionState: CRSPartnerBLESDK.CRSDeviceConnectionState
+  package let blePacketSize: Swift.Int
+  public init(deviceName: Swift.String, deviceModel: Swift.String, connectionState: CRSPartnerBLESDK.CRSDeviceConnectionState)
+  package init(deviceName: Swift.String, deviceModel: Swift.String, connectionState: CRSPartnerBLESDK.CRSDeviceConnectionState, blePacketSize: Swift.Int)
+  package init(deviceId: Swift.String, deviceModel: Swift.String, connectionState: CRSPartnerBLESDK.CRSDeviceConnectionState, blePacketSize: Swift.Int = 20)
+  package var deviceId: Swift.String {
+    get
+  }
+  public var deviceKey: CRSPartnerBLESDK.CRSDeviceKey {
+    get
+  }
+  public static func == (a: CRSPartnerBLESDK.CRSAuthorizedDevice, b: CRSPartnerBLESDK.CRSAuthorizedDevice) -> Swift.Bool
+}
+public struct CRSDeviceKey : Swift.Hashable, Swift.Sendable {
+  public let deviceName: Swift.String
+  public let deviceModel: Swift.String
+  public init(deviceName: Swift.String, deviceModel: Swift.String)
+  package init(deviceId: Swift.String, deviceModel: Swift.String)
+  package var deviceId: Swift.String {
+    get
+  }
+  public static func == (a: CRSPartnerBLESDK.CRSDeviceKey, b: CRSPartnerBLESDK.CRSDeviceKey) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct CRSHeartBroadcastResult : Swift.Equatable, CRSPartnerBLESDK.CRSCancellable, Swift.Sendable {
+  public let protocolRet: Swift.UInt32
+  public init(protocolRet: Swift.UInt32)
+  package init(protocolRet: Swift.UInt32, onCancel: @escaping @Sendable () -> Swift.Void)
+  public func stop()
+  public func cancel()
+  public static func == (lhs: CRSPartnerBLESDK.CRSHeartBroadcastResult, rhs: CRSPartnerBLESDK.CRSHeartBroadcastResult) -> Swift.Bool
+}
+public enum CRSDeviceConnectionState : Swift.Equatable, Swift.Sendable {
+  case disconnected
+  case connecting
+  case connected
+  case reconnecting
+  case rebindRequired
+  public static func == (a: CRSPartnerBLESDK.CRSDeviceConnectionState, b: CRSPartnerBLESDK.CRSDeviceConnectionState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct CRSSdkError : Swift.Error, Swift.Equatable, Swift.Sendable {
+  public let code: CRSPartnerBLESDK.CRSSdkErrorCode
+  public let message: Swift.String?
+  public let tLogId: Swift.String?
+  public init(code: CRSPartnerBLESDK.CRSSdkErrorCode, message: Swift.String? = nil, tLogId: Swift.String? = nil)
+  public static func == (a: CRSPartnerBLESDK.CRSSdkError, b: CRSPartnerBLESDK.CRSSdkError) -> Swift.Bool
+}
+public protocol CRSCancellable : Swift.Sendable {
+  func cancel()
+}
+final public class CRSAnyCancellable : CRSPartnerBLESDK.CRSCancellable, @unchecked Swift.Sendable {
+  public init(_ onCancel: @escaping () -> Swift.Void)
+  final public func cancel()
+  @objc deinit
+}
+package protocol CRSAPIEndpoint : Swift.Sendable {
+  associatedtype Request : Swift.Encodable
+  associatedtype Response : Swift.Decodable, Swift.Sendable
+  var path: Swift.String { get }
+  var request: Self.Request { get }
+}
+package protocol CRSHTTPTransport : Swift.Sendable {
+  func post<Request, Response>(path: Swift.String, body: Request, responseType: Response.Type) async throws -> Response where Request : Swift.Encodable, Response : Swift.Decodable
+}
+package actor CRSAPIClient {
+  package init(transport: any CRSPartnerBLESDK.CRSHTTPTransport)
+  package func send<Endpoint>(_ endpoint: Endpoint) async throws -> Endpoint.Response where Endpoint : CRSPartnerBLESDK.CRSAPIEndpoint
+  nonisolated package func validateEnvelope<T>(_ response: CRSPartnerBLESDK.CRSResponseEnvelope<T>) throws -> T where T : Swift.Decodable, T : Swift.Sendable
+  @objc deinit
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  @_semantics("defaultActor") nonisolated final package var unownedExecutor: _Concurrency.UnownedSerialExecutor {
+    get
+  }
+}
+package struct CRSURLSessionHTTPTransport : CRSPartnerBLESDK.CRSHTTPTransport {
+  package init(baseURL: Foundation.URL, session: Foundation.URLSession = .shared)
+  package func post<Request, Response>(path: Swift.String, body: Request, responseType: Response.Type) async throws -> Response where Request : Swift.Encodable, Response : Swift.Decodable
+}
+package enum CRSJSONCodec {
+  package static func encode<T>(_ value: T) throws -> Foundation.Data where T : Swift.Encodable
+  package static func decode<T>(_ type: T.Type, from data: Foundation.Data) throws -> T where T : Swift.Decodable
+}
+package protocol CRSAuthCryptoProvider : Swift.Sendable {
+  func encrypt(contentJSON data: Foundation.Data, encryptKeyId: Swift.String, publicKeyPEM: Swift.String) throws -> CRSPartnerBLESDK.CRSEncryptedRequest
+  func verify(message: Foundation.Data, signatureBase64URL: Swift.String, publicKeyPEM: Swift.String) -> Swift.Bool
+}
+package struct CRSSecurityAuthCryptoProvider : CRSPartnerBLESDK.CRSAuthCryptoProvider {
+  package init()
+  package func encrypt(contentJSON data: Foundation.Data, encryptKeyId: Swift.String, publicKeyPEM: Swift.String) throws -> CRSPartnerBLESDK.CRSEncryptedRequest
+  package func verify(message: Foundation.Data, signatureBase64URL: Swift.String, publicKeyPEM: Swift.String) -> Swift.Bool
+}
+package struct CRSPublicKeysEndpoint : CRSPartnerBLESDK.CRSAPIEndpoint {
+  package typealias Response = CRSPartnerBLESDK.CRSResponseEnvelope<CRSPartnerBLESDK.CRSPublicKeysResponse>
+  package let request: CRSPartnerBLESDK.CRSPublicKeysRequest
+  package init(request: CRSPartnerBLESDK.CRSPublicKeysRequest)
+  package var path: Swift.String {
+    get
+  }
+  package typealias Request = CRSPartnerBLESDK.CRSPublicKeysRequest
+}
+package struct CRSPublicKeyByIdEndpoint : CRSPartnerBLESDK.CRSAPIEndpoint {
+  package typealias Response = CRSPartnerBLESDK.CRSResponseEnvelope<CRSPartnerBLESDK.CRSPublicKeyByIdResponse>
+  package let request: CRSPartnerBLESDK.CRSPublicKeyByIdRequest
+  package init(request: CRSPartnerBLESDK.CRSPublicKeyByIdRequest)
+  package var path: Swift.String {
+    get
+  }
+  package typealias Request = CRSPartnerBLESDK.CRSPublicKeyByIdRequest
+}
+package struct CRSGetAuthInfoEndpoint : CRSPartnerBLESDK.CRSAuthSignedEndpoint {
+  package typealias ResponseData = CRSPartnerBLESDK.CRSSignedResultData
+  package typealias Content = CRSPartnerBLESDK.CRSGetAuthInfoContent
+  package typealias Result = CRSPartnerBLESDK.CRSAuthInfoResult
+  package static let path: Swift.String
+  package let content: CRSPartnerBLESDK.CRSGetAuthInfoContent
+  package init(config: CRSPartnerBLESDK.CRSSdkInitConfig, request: CRSPartnerBLESDK.CRSAuthorizationRequest, authorizedDevices: [CRSPartnerBLESDK.CRSAuthorizedDevice], serverConfig: CRSPartnerBLESDK.CRSAuthServerConfig, state: Swift.String)
+  package func decodeResultJson(_ resultJson: Swift.String) throws -> CRSPartnerBLESDK.CRSAuthInfoResult
+}
+package struct CRSRefreshAuthEndpoint : CRSPartnerBLESDK.CRSAuthSignedEndpoint {
+  package typealias ResponseData = CRSPartnerBLESDK.CRSSignedResultData
+  package typealias Content = CRSPartnerBLESDK.CRSRefreshContent
+  package typealias Result = CRSPartnerBLESDK.CRSRefreshResult
+  package static let path: Swift.String
+  package let content: CRSPartnerBLESDK.CRSRefreshContent
+  package init(config: CRSPartnerBLESDK.CRSSdkInitConfig, cache: CRSPartnerBLESDK.CRSGrantCacheRecord, serverConfig: CRSPartnerBLESDK.CRSAuthServerConfig)
+  package func decodeResultJson(_ resultJson: Swift.String) throws -> CRSPartnerBLESDK.CRSRefreshResult
+}
+package struct CRSRevokeAuthEndpoint : CRSPartnerBLESDK.CRSAuthEncryptedEndpoint {
+  package typealias ResponseData = CRSPartnerBLESDK.CRSEmptyData
+  package typealias Content = CRSPartnerBLESDK.CRSRevokeContent
+  package static let path: Swift.String
+  package let content: CRSPartnerBLESDK.CRSRevokeContent
+  package init(config: CRSPartnerBLESDK.CRSSdkInitConfig, grantId: Swift.String, serverConfig: CRSPartnerBLESDK.CRSAuthServerConfig)
+}
+package struct CRSGetAuthInfoContent : Swift.Encodable, Swift.Sendable {
+  package let clientId: Swift.String
+  package let partnerUserId: Swift.String
+  package let clientType: Swift.Int
+  package let scope: Swift.String
+  package let serverEnvironment: Swift.Int
+  package let bundleId: Swift.String
+  package let appSignatureSha256: Swift.String
+  package let state: Swift.String
+  package let sdkVersion: Swift.String
+  package let authorizedDevices: [CRSPartnerBLESDK.CRSAuthorizedDeviceRequestContent]
+  package func encode(to encoder: any Swift.Encoder) throws
+}
+package struct CRSAuthorizedDeviceRequestContent : Swift.Encodable, Swift.Sendable {
+  package let deviceName: Swift.String
+  package let deviceModel: Swift.String
+  package func encode(to encoder: any Swift.Encoder) throws
+}
+package struct CRSAuthInfoResult : Swift.Decodable, Swift.Sendable {
+  package let deepLink: Swift.String
+  package let payload: CRSPartnerBLESDK.CRSAuthInfoResult.Payload
+  package init(from decoder: any Swift.Decoder) throws
+  package struct Payload : Swift.Codable, Swift.Equatable, Swift.Sendable {
+    package let clientId: Swift.String
+    package let partnerUserId: Swift.String
+    package let clientType: Swift.Int
+    package let scope: Swift.String
+    package let serverEnvironment: Swift.Int
+    package let state: Swift.String
+    package let currentTimeInSec: Swift.UInt64?
+    package let expireAtSec: Swift.UInt64
+    package init(from decoder: any Swift.Decoder) throws
+    package func encode(to encoder: any Swift.Encoder) throws
+    package static func == (a: CRSPartnerBLESDK.CRSAuthInfoResult.Payload, b: CRSPartnerBLESDK.CRSAuthInfoResult.Payload) -> Swift.Bool
+  }
+}
+package struct CRSRefreshContent : Swift.Encodable, Swift.Sendable {
+  package let clientId: Swift.String
+  package let clientType: Swift.Int
+  package let grantId: Swift.String
+  package let userId: Swift.String
+  package let bundleId: Swift.String
+  package func encode(to encoder: any Swift.Encoder) throws
+}
+package struct CRSRefreshResult : Swift.Decodable, Swift.Sendable {
+  package let grantId: Swift.String
+  package let userId: Swift.String
+  package let expireAtSec: Swift.UInt64
+  package let refreshExpireAtSec: Swift.UInt64?
+  package init(from decoder: any Swift.Decoder) throws
+}
+package struct CRSRevokeContent : Swift.Encodable, Swift.Sendable {
+  package let clientId: Swift.String
+  package let clientType: Swift.Int
+  package let grantId: Swift.String
+  package let bundleId: Swift.String
+  package let reason: Swift.String
+  package func encode(to encoder: any Swift.Encoder) throws
+}
+package struct CRSResponseEnvelope<T> : Swift.Decodable, Swift.Sendable where T : Swift.Decodable, T : Swift.Sendable {
+  package let apiCode: Swift.String
+  package let message: Swift.String
+  package let result: Swift.String
+  package let tLogId: Swift.String?
+  package let data: T?
+  package init(from decoder: any Swift.Decoder) throws
+}
+package struct CRSPublicKeysRequest : Swift.Encodable, Swift.Sendable {
+  package let clientId: Swift.String
+  package let clientType: Swift.Int
+  package init(clientId: Swift.String, clientType: Swift.Int)
+  package func encode(to encoder: any Swift.Encoder) throws
+}
+package struct CRSPublicKeysResponse : Swift.Codable, Swift.Sendable {
+  package let encryptKeyId: Swift.String
+  package let encryptPublicKeyPem: Swift.String
+  package let singKeyId: Swift.String
+  package let signPublicKeyPem: Swift.String
+  package init(encryptKeyId: Swift.String, encryptPublicKeyPem: Swift.String, singKeyId: Swift.String, signPublicKeyPem: Swift.String)
+  package init(from decoder: any Swift.Decoder) throws
+  package func encode(to encoder: any Swift.Encoder) throws
+}
+package struct CRSPublicKeyByIdRequest : Swift.Encodable, Swift.Sendable {
+  package let keyId: Swift.String
+  package init(keyId: Swift.String)
+  package func encode(to encoder: any Swift.Encoder) throws
+}
+package struct CRSPublicKeyByIdResponse : Swift.Codable, Swift.Sendable {
+  package let keyId: Swift.String
+  package let publicKeyPem: Swift.String
+  package init(keyId: Swift.String, publicKeyPem: Swift.String)
+  package func encode(to encoder: any Swift.Encoder) throws
+  package init(from decoder: any Swift.Decoder) throws
+}
+package struct CRSEncryptedRequest : Swift.Encodable, Swift.Sendable {
+  package let encryptKeyId: Swift.String
+  package let encryptedAppKey: Swift.String
+  package let iv: Swift.String
+  package let contentJson: Swift.String
+  package init(encryptKeyId: Swift.String, encryptedAppKey: Swift.String, iv: Swift.String, contentJson: Swift.String)
+  package func encode(to encoder: any Swift.Encoder) throws
+}
+package struct CRSSignedResultData : Swift.Codable, Swift.Sendable {
+  package let resultJson: Swift.String
+  package let singKeyId: Swift.String
+  package let signature: Swift.String
+  package init(resultJson: Swift.String, singKeyId: Swift.String, signature: Swift.String)
+  package init(from decoder: any Swift.Decoder) throws
+  package func encode(to encoder: any Swift.Encoder) throws
+}
+package struct CRSEmptyData : Swift.Codable, Swift.Sendable {
+  package init()
+  package func encode(to encoder: any Swift.Encoder) throws
+  package init(from decoder: any Swift.Decoder) throws
+}
+package struct CRSAuthServerConfig : Swift.Sendable {
+  package let baseURL: Foundation.URL
+  package let bundleId: Swift.String
+  package let sdkVersion: Swift.String
+  package let revokeReason: Swift.String
+  package init(baseURL: Foundation.URL, bundleId: Swift.String, sdkVersion: Swift.String = "0.1.0", revokeReason: Swift.String = "partner_logout")
+  package static func `default`(environment: CRSPartnerBLESDK.CRSServerEnvironmentType, bundleId: Swift.String, sdkVersion: Swift.String = "0.1.0") -> CRSPartnerBLESDK.CRSAuthServerConfig
+}
+package struct CRSSignedAuthResponse<Result> : Swift.Sendable where Result : Swift.Sendable {
+  package let result: Result
+  package let tLogId: Swift.String?
+}
+package protocol CRSAuthEncryptedEndpoint : Swift.Sendable {
+  associatedtype Content : Swift.Encodable, Swift.Sendable
+  associatedtype ResponseData : Swift.Decodable, Swift.Sendable
+  static var path: Swift.String { get }
+  var content: Self.Content { get }
+}
+package protocol CRSAuthSignedEndpoint : CRSPartnerBLESDK.CRSAuthEncryptedEndpoint where Self.ResponseData == CRSPartnerBLESDK.CRSSignedResultData {
+  associatedtype Result : Swift.Decodable, Swift.Sendable
+  func decodeResultJson(_ resultJson: Swift.String) throws -> Self.Result
+}
+package actor CRSSignedAuthExecutor {
+  package init(apiClient: CRSPartnerBLESDK.CRSAPIClient, cryptoProvider: any CRSPartnerBLESDK.CRSAuthCryptoProvider)
+  package func publicKeys(config: CRSPartnerBLESDK.CRSSdkInitConfig, forceRefresh: Swift.Bool = false) async throws -> CRSPartnerBLESDK.CRSPublicKeysResponse
+  package func signPublicKeyPEM(config: CRSPartnerBLESDK.CRSSdkInitConfig, matchingSignKeyId signKeyId: Swift.String) async throws -> Swift.String
+  package func clearCachedKeys()
+  package func sendSigned<Endpoint>(_ endpoint: Endpoint, config: CRSPartnerBLESDK.CRSSdkInitConfig, signatureErrorCode: CRSPartnerBLESDK.CRSSdkErrorCode) async throws -> CRSPartnerBLESDK.CRSSignedAuthResponse<Endpoint.Result> where Endpoint : CRSPartnerBLESDK.CRSAuthSignedEndpoint
+  package func sendEncrypted<Endpoint>(_ endpoint: Endpoint, config: CRSPartnerBLESDK.CRSSdkInitConfig) async throws -> (data: Endpoint.ResponseData, tLogId: Swift.String?) where Endpoint : CRSPartnerBLESDK.CRSAuthEncryptedEndpoint
+  @objc deinit
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  @_semantics("defaultActor") nonisolated final package var unownedExecutor: _Concurrency.UnownedSerialExecutor {
+    get
+  }
+}
+extension Swift.String {
+  package var crs_sha256Fingerprint: Swift.String {
+    get
+  }
+}
+package actor CRSMockAuthorizationService : CRSPartnerBLESDK.CRSAuthorizationService {
+  package struct Configuration : Swift.Sendable {
+    package let deviceName: Swift.String
+    package let deviceModel: Swift.String
+    package let userId: Swift.String
+    package let corosOpenHost: Swift.String
+    package init(deviceName: Swift.String = "MOCK_DEVICE_ID", deviceModel: Swift.String = "PACE_PRO", userId: Swift.String = "mock-coros-user", corosOpenHost: Swift.String = "open.coros.com")
+    package init(deviceId: Swift.String, deviceModel: Swift.String = "PACE_PRO", userId: Swift.String = "mock-coros-user", corosOpenHost: Swift.String = "open.coros.com")
+  }
+  package init(configuration: CRSPartnerBLESDK.CRSMockAuthorizationService.Configuration = Configuration())
+  package func authorize(config: CRSPartnerBLESDK.CRSSdkInitConfig, request: CRSPartnerBLESDK.CRSAuthorizationRequest, authorizedDevices: [CRSPartnerBLESDK.CRSAuthorizedDevice]) async throws -> CRSPartnerBLESDK.CRSAuthorizationResult
+  package func refresh(config: CRSPartnerBLESDK.CRSSdkInitConfig, cache: CRSPartnerBLESDK.CRSGrantCacheRecord) async throws -> CRSPartnerBLESDK.CRSAuthorizationResult
+  package func revoke(config: CRSPartnerBLESDK.CRSSdkInitConfig, grantId: Swift.String) async throws
+  package func authorizationResult(fromCallbackURL url: Foundation.URL, config: CRSPartnerBLESDK.CRSSdkInitConfig) async throws -> CRSPartnerBLESDK.CRSAuthorizationResult?
+  package func clearLocalAuthorizationState(clientId: Swift.String) async
+  @objc deinit
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  @_semantics("defaultActor") nonisolated final package var unownedExecutor: _Concurrency.UnownedSerialExecutor {
+    get
+  }
+}
+package actor CRSDefaultAuthorizationService : CRSPartnerBLESDK.CRSAuthorizationService {
+  package init(bundleId: Swift.String = Bundle.main.bundleIdentifier ?? "", sdkVersion: Swift.String = "0.1.0", session: Foundation.URLSession = URLSession(configuration: .ephemeral), cryptoProvider: any CRSPartnerBLESDK.CRSAuthCryptoProvider = CRSSecurityAuthCryptoProvider())
+  package func authorize(config: CRSPartnerBLESDK.CRSSdkInitConfig, request: CRSPartnerBLESDK.CRSAuthorizationRequest, authorizedDevices: [CRSPartnerBLESDK.CRSAuthorizedDevice]) async throws -> CRSPartnerBLESDK.CRSAuthorizationResult
+  package func refresh(config: CRSPartnerBLESDK.CRSSdkInitConfig, cache: CRSPartnerBLESDK.CRSGrantCacheRecord) async throws -> CRSPartnerBLESDK.CRSAuthorizationResult
+  package func revoke(config: CRSPartnerBLESDK.CRSSdkInitConfig, grantId: Swift.String) async throws
+  package func authorizationResult(fromCallbackURL url: Foundation.URL, config: CRSPartnerBLESDK.CRSSdkInitConfig) async throws -> CRSPartnerBLESDK.CRSAuthorizationResult?
+  package func clearLocalAuthorizationState(clientId: Swift.String) async
+  @objc deinit
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  @_semantics("defaultActor") nonisolated final package var unownedExecutor: _Concurrency.UnownedSerialExecutor {
+    get
+  }
+}
+package actor CRSURLSessionAuthorizationService : CRSPartnerBLESDK.CRSAuthorizationService {
+  package init(serverConfig: CRSPartnerBLESDK.CRSAuthServerConfig, session: Foundation.URLSession? = nil, cryptoProvider: any CRSPartnerBLESDK.CRSAuthCryptoProvider = CRSSecurityAuthCryptoProvider())
+  package func authorize(config: CRSPartnerBLESDK.CRSSdkInitConfig, request: CRSPartnerBLESDK.CRSAuthorizationRequest, authorizedDevices: [CRSPartnerBLESDK.CRSAuthorizedDevice]) async throws -> CRSPartnerBLESDK.CRSAuthorizationResult
+  package func refresh(config: CRSPartnerBLESDK.CRSSdkInitConfig, cache: CRSPartnerBLESDK.CRSGrantCacheRecord) async throws -> CRSPartnerBLESDK.CRSAuthorizationResult
+  package func revoke(config: CRSPartnerBLESDK.CRSSdkInitConfig, grantId: Swift.String) async throws
+  package func authorizationResult(fromCallbackURL url: Foundation.URL, config: CRSPartnerBLESDK.CRSSdkInitConfig) async throws -> CRSPartnerBLESDK.CRSAuthorizationResult?
+  package func clearLocalAuthorizationState(clientId: Swift.String) async
+  @objc deinit
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  @_semantics("defaultActor") nonisolated final package var unownedExecutor: _Concurrency.UnownedSerialExecutor {
+    get
+  }
+}
+package struct CRSMasterSendCmd {
+  package var cmd: Swift.UInt32
+  package var extraData: Foundation.Data
+  package var unknownFields: SwiftProtobuf.UnknownStorage
+  package init()
+}
+package struct CRSMasterSend {
+  package var sendList: [CRSPartnerBLESDK.CRSMasterSendCmd]
+  package var unknownFields: SwiftProtobuf.UnknownStorage
+  package init()
+}
+package struct CRSSlaveAckCmd {
+  package var cmd: Swift.UInt32
+  package var protocolRet: Swift.UInt32
+  package var extraData: Foundation.Data
+  package var unknownFields: SwiftProtobuf.UnknownStorage
+  package init()
+}
+package struct CRSSlaveAck {
+  package var ackList: [CRSPartnerBLESDK.CRSSlaveAckCmd]
+  package var unknownFields: SwiftProtobuf.UnknownStorage
+  package init()
+}
+package struct CRSSlaveNotifyCmd {
+  package var cmd: Swift.UInt32
+  package var extraData: Foundation.Data
+  package var unknownFields: SwiftProtobuf.UnknownStorage
+  package init()
+}
+package struct CRSSlaveNotify {
+  package var notifyList: [CRSPartnerBLESDK.CRSSlaveNotifyCmd]
+  package var unknownFields: SwiftProtobuf.UnknownStorage
+  package init()
+}
+extension CRSPartnerBLESDK.CRSMasterSendCmd : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  package static let protoMessageName: Swift.String
+  package static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  package mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  package func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  package static func == (lhs: CRSPartnerBLESDK.CRSMasterSendCmd, rhs: CRSPartnerBLESDK.CRSMasterSendCmd) -> Swift.Bool
+  package var hashValue: Swift.Int {
+    get
+  }
+}
+extension CRSPartnerBLESDK.CRSMasterSend : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  package static let protoMessageName: Swift.String
+  package static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  package mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  package func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  package static func == (lhs: CRSPartnerBLESDK.CRSMasterSend, rhs: CRSPartnerBLESDK.CRSMasterSend) -> Swift.Bool
+  package var hashValue: Swift.Int {
+    get
+  }
+}
+extension CRSPartnerBLESDK.CRSSlaveAckCmd : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  package static let protoMessageName: Swift.String
+  package static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  package mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  package func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  package static func == (lhs: CRSPartnerBLESDK.CRSSlaveAckCmd, rhs: CRSPartnerBLESDK.CRSSlaveAckCmd) -> Swift.Bool
+  package var hashValue: Swift.Int {
+    get
+  }
+}
+extension CRSPartnerBLESDK.CRSSlaveAck : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  package static let protoMessageName: Swift.String
+  package static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  package mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  package func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  package static func == (lhs: CRSPartnerBLESDK.CRSSlaveAck, rhs: CRSPartnerBLESDK.CRSSlaveAck) -> Swift.Bool
+  package var hashValue: Swift.Int {
+    get
+  }
+}
+extension CRSPartnerBLESDK.CRSSlaveNotifyCmd : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  package static let protoMessageName: Swift.String
+  package static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  package mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  package func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  package static func == (lhs: CRSPartnerBLESDK.CRSSlaveNotifyCmd, rhs: CRSPartnerBLESDK.CRSSlaveNotifyCmd) -> Swift.Bool
+  package var hashValue: Swift.Int {
+    get
+  }
+}
+extension CRSPartnerBLESDK.CRSSlaveNotify : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  package static let protoMessageName: Swift.String
+  package static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  package mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  package func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  package static func == (lhs: CRSPartnerBLESDK.CRSSlaveNotify, rhs: CRSPartnerBLESDK.CRSSlaveNotify) -> Swift.Bool
+  package var hashValue: Swift.Int {
+    get
+  }
+}
+package enum CRSCMD_E : SwiftProtobuf.Enum {
+  package typealias RawValue = Swift.Int
+  case cmdInvalid
+  case hrmBroadcast
+  case UNRECOGNIZED(Swift.Int)
+  package init()
+  package init?(rawValue: Swift.Int)
+  package var rawValue: Swift.Int {
+    get
+  }
+}
+extension CRSPartnerBLESDK.CRSCMD_E : Swift.CaseIterable {
+  package static var allCases: [CRSPartnerBLESDK.CRSCMD_E]
+  package typealias AllCases = [CRSPartnerBLESDK.CRSCMD_E]
+}
+extension CRSPartnerBLESDK.CRSCMD_E : SwiftProtobuf._ProtoNameProviding {
+  package static let _protobuf_nameMap: SwiftProtobuf._NameMap
+}
+public struct CRSHrmBroadcastSwitch {
+  public var onoff: Swift.UInt32
+  public var sportStartUtc: Swift.UInt32
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+public struct CRSHrSample {
+  public var sportStartUtc: Swift.UInt32
+  public var timestampS: Swift.UInt32
+  public var heartRate: Swift.UInt32
+  public var unknownFields: SwiftProtobuf.UnknownStorage
+  public init()
+}
+extension CRSPartnerBLESDK.CRSHrmBroadcastSwitch : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: CRSPartnerBLESDK.CRSHrmBroadcastSwitch, rhs: CRSPartnerBLESDK.CRSHrmBroadcastSwitch) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension CRSPartnerBLESDK.CRSHrSample : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: Swift.String
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
+  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
+  public static func == (lhs: CRSPartnerBLESDK.CRSHrSample, rhs: CRSPartnerBLESDK.CRSHrSample) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum CRSServerEnvironmentType : SwiftProtobuf.Enum {
+  public typealias RawValue = Swift.Int
+  case serverEnvironmentProduction
+  case serverEnvironmentTest
+  case UNRECOGNIZED(Swift.Int)
+  public init()
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension CRSPartnerBLESDK.CRSServerEnvironmentType : Swift.CaseIterable {
+  public static var allCases: [CRSPartnerBLESDK.CRSServerEnvironmentType]
+  public typealias AllCases = [CRSPartnerBLESDK.CRSServerEnvironmentType]
+}
+public enum CRSSdkErrorCode : SwiftProtobuf.Enum {
+  public typealias RawValue = Swift.Int
+  case ok
+  case invalidArgument
+  case notAuthorized
+  case deviceNotReady
+  case commandTimeout
+  case ackTimeout
+  case streamInterrupted
+  case rebindRequired
+  case permissionRevoked
+  case invalidPayload
+  case environmentMismatch
+  case bluetoothPoweredOff
+  case bluetoothUnauthorized
+  case watchUserExitLocked
+  case commandChannelAuthFailed
+  case internalError
+  case serverError
+  case serverLoginInvalid
+  case serverInvalidParameter
+  case serverNoData
+  case serverRateLimited
+  case serverInvalidContent
+  case serverInvalidClient
+  case serverInvalidScope
+  case serverExpired
+  case serverInvalidSignature
+  case serverKeyUnavailable
+  case serverExpiredKey
+  case serverUnauthorizedDevice
+  case serverDeviceDisconnected
+  case serverInvalidAuthorizedDevices
+  case serverUserDenied
+  case serverInvalidGrant
+  case serverGrantRevoked
+  case serverDeviceNotExist
+  case UNRECOGNIZED(Swift.Int)
+  public init()
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension CRSPartnerBLESDK.CRSSdkErrorCode : Swift.CaseIterable {
+  public static var allCases: [CRSPartnerBLESDK.CRSSdkErrorCode]
+  public typealias AllCases = [CRSPartnerBLESDK.CRSSdkErrorCode]
+}
+extension CRSPartnerBLESDK.CRSServerEnvironmentType : SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+}
+extension CRSPartnerBLESDK.CRSSdkErrorCode : SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
+}
+package actor CRSInMemoryGrantStore : CRSPartnerBLESDK.CRSGrantStore {
+  package init()
+  package func load(environment: CRSPartnerBLESDK.CRSServerEnvironmentType, clientId: Swift.String) async throws -> CRSPartnerBLESDK.CRSGrantCacheRecord?
+  package func save(_ record: CRSPartnerBLESDK.CRSGrantCacheRecord) async throws
+  package func clear(environment: CRSPartnerBLESDK.CRSServerEnvironmentType, clientId: Swift.String) async throws
+  @objc deinit
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  @_semantics("defaultActor") nonisolated final package var unownedExecutor: _Concurrency.UnownedSerialExecutor {
+    get
+  }
+}
+package actor CRSKeychainGrantStore : CRSPartnerBLESDK.CRSGrantStore {
+  package init(service: Swift.String = "com.coros.partnerble.grant")
+  package func load(environment: CRSPartnerBLESDK.CRSServerEnvironmentType, clientId: Swift.String) async throws -> CRSPartnerBLESDK.CRSGrantCacheRecord?
+  package func save(_ record: CRSPartnerBLESDK.CRSGrantCacheRecord) async throws
+  package func clear(environment: CRSPartnerBLESDK.CRSServerEnvironmentType, clientId: Swift.String) async throws
+  @objc deinit
+  @available(iOS 13.0, tvOS 13.0, watchOS 6.0, macOS 10.15, *)
+  @_semantics("defaultActor") nonisolated final package var unownedExecutor: _Concurrency.UnownedSerialExecutor {
+    get
+  }
+}
+extension CRSPartnerBLESDK.CRSLogLevel : Swift.Hashable {}
+extension CRSPartnerBLESDK.CRSLogLevel : Swift.RawRepresentable {}
+extension CRSPartnerBLESDK.CRSDeviceConnectionState : Swift.Hashable {}

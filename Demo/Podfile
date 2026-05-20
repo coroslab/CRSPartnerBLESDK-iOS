@@ -1,0 +1,7 @@
+platform :ios, '14.0'
+
+target 'CRSPartnerBLEDemo' do
+  use_frameworks!
+
+  pod 'CRSPartnerBLESDK', :path => '..'
+end
