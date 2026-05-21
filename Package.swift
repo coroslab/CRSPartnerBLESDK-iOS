@@ -17,7 +17,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.37.0")
+        .package(url: "https://github.com/apple/swift-protobuf.git", exact: "1.37.0")
     ],
     targets: [
         .binaryTarget(

@@ -13,10 +13,12 @@ CRSPartnerBLESDK is the COROS Partner BLE SDK for iOS apps.
 In Xcode, open **File > Add Package Dependencies** and add:
 
 ```text
-https://github.com/coros/CRSPartnerBLESDK-iOS.git
+https://github.com/coroschina/CRSPartnerBLESDK-iOS.git
 ```
 
 Select the `CRSPartnerBLESDK` product.
+
+The SDK depends on `SwiftProtobuf 1.37.0`. Package managers resolve this dependency from source; do not add a separate vendored `SwiftProtobuf.xcframework`.
 
 ## CocoaPods
 
@@ -27,7 +29,17 @@ platform :ios, '14.0'
 
 target 'YourApp' do
   use_frameworks!
-  pod 'CRSPartnerBLESDK', '~> 0.1.0'
+  pod 'CRSPartnerBLESDK', '~> 0.1.1'
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    next unless target.name == 'SwiftProtobuf'
+
+    target.build_configurations.each do |config|
+      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+    end
+  end
 end
 ```
 
@@ -35,9 +47,11 @@ If the pod is not published to a specs repo yet, use the Git tag directly:
 
 ```ruby
 pod 'CRSPartnerBLESDK',
-    :git => 'https://github.com/coros/CRSPartnerBLESDK-iOS.git',
-    :tag => '0.1.0'
+    :git => 'https://github.com/coroschina/CRSPartnerBLESDK-iOS.git',
+    :tag => '0.1.1'
 ```
+
+The pod includes `CRSPartnerBLESDK.xcframework` and resolves `SwiftProtobuf 1.37.0` from CocoaPods source. Keep the `post_install` block so CocoaPods builds SwiftProtobuf with module stability enabled.
 
 ## Basic Usage
 
@@ -86,4 +100,4 @@ open CRSPartnerBLEDemo.xcworkspace
 
 ## Version
 
-Current version: `0.1.0`.
+Current version: `0.1.1`.

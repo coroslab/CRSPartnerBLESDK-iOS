@@ -61,10 +61,12 @@ Partner App 需要配置蓝牙权限说明文案：
 在 Xcode 中选择 **File > Add Package Dependencies**，添加：
 
 ```text
-https://github.com/coros/CRSPartnerBLESDK-iOS.git
+https://github.com/coroschina/CRSPartnerBLESDK-iOS.git
 ```
 
 选择 `CRSPartnerBLESDK` product。
+
+SDK 依赖 `SwiftProtobuf 1.37.0`。包管理器会从源码统一解析该依赖，Partner App 不需要额外加入 `SwiftProtobuf.xcframework`。
 
 ### 3.2 CocoaPods
 
@@ -75,7 +77,17 @@ platform :ios, '14.0'
 
 target 'YourApp' do
   use_frameworks!
-  pod 'CRSPartnerBLESDK', '~> 0.1.0'
+  pod 'CRSPartnerBLESDK', '~> 0.1.1'
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    next unless target.name == 'SwiftProtobuf'
+
+    target.build_configurations.each do |config|
+      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+    end
+  end
 end
 ```
 
@@ -83,9 +95,11 @@ end
 
 ```ruby
 pod 'CRSPartnerBLESDK',
-    :git => 'https://github.com/coros/CRSPartnerBLESDK-iOS.git',
-    :tag => '0.1.0'
+    :git => 'https://github.com/coroschina/CRSPartnerBLESDK-iOS.git',
+    :tag => '0.1.1'
 ```
+
+Pod 会从 CocoaPods 源码解析 `SwiftProtobuf 1.37.0`。保留上面的 `post_install` 配置，确保 CocoaPods 编译 SwiftProtobuf 时开启 module stability。
 
 业务代码引入：
 
