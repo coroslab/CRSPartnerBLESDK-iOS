@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.1
+## 0.1.2
 
 - Initial CRSPartnerBLESDK iOS external package.
 - Added iOS integration guide.

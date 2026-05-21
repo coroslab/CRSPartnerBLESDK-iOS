@@ -29,7 +29,7 @@ platform :ios, '14.0'
 
 target 'YourApp' do
   use_frameworks!
-  pod 'CRSPartnerBLESDK', '~> 0.1.1'
+  pod 'CRSPartnerBLESDK', '~> 0.1.2'
 end
 
 post_install do |installer|
@@ -41,14 +41,6 @@ post_install do |installer|
     end
   end
 end
-```
-
-If the pod is not published to a specs repo yet, use the Git tag directly:
-
-```ruby
-pod 'CRSPartnerBLESDK',
-    :git => 'https://github.com/coroschina/CRSPartnerBLESDK-iOS.git',
-    :tag => '0.1.1'
 ```
 
 The pod includes `CRSPartnerBLESDK.xcframework` and resolves `SwiftProtobuf 1.37.0` from CocoaPods source. Keep the `post_install` block so CocoaPods builds SwiftProtobuf with module stability enabled.
@@ -100,4 +92,4 @@ open CRSPartnerBLEDemo.xcworkspace
 
 ## Version
 
-Current version: `0.1.1`.
+Current version: `0.1.2`.

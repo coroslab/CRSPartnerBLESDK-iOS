@@ -77,7 +77,7 @@ platform :ios, '14.0'
 
 target 'YourApp' do
   use_frameworks!
-  pod 'CRSPartnerBLESDK', '~> 0.1.1'
+  pod 'CRSPartnerBLESDK', '~> 0.1.2'
 end
 
 post_install do |installer|
@@ -89,14 +89,6 @@ post_install do |installer|
     end
   end
 end
-```
-
-如果暂未发布到 CocoaPods specs repo，可使用 Git tag 接入：
-
-```ruby
-pod 'CRSPartnerBLESDK',
-    :git => 'https://github.com/coroschina/CRSPartnerBLESDK-iOS.git',
-    :tag => '0.1.1'
 ```
 
 Pod 会从 CocoaPods 源码解析 `SwiftProtobuf 1.37.0`。保留上面的 `post_install` 配置，确保 CocoaPods 编译 SwiftProtobuf 时开启 module stability。
