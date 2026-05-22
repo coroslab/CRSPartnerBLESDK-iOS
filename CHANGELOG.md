@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.3
+
+- Removed the public SwiftProtobuf dependency from Swift Package Manager and CocoaPods integration.
+- Updated the binary framework to expose SDK wrapper models instead of protobuf-generated models.
+- Added separate demo targets for CocoaPods and Swift Package Manager verification.
+
 ## 0.1.2
 
 - Initial CRSPartnerBLESDK iOS external package.

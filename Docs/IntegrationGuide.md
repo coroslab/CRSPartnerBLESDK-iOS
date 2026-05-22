@@ -66,8 +66,6 @@ https://github.com/coroschina/CRSPartnerBLESDK-iOS.git
 
 选择 `CRSPartnerBLESDK` product。
 
-SDK 依赖 `SwiftProtobuf 1.37.0`。包管理器会从源码统一解析该依赖，Partner App 不需要额外加入 `SwiftProtobuf.xcframework`。
-
 ### 3.2 CocoaPods
 
 在 `Podfile` 中添加：
@@ -77,21 +75,9 @@ platform :ios, '14.0'
 
 target 'YourApp' do
   use_frameworks!
-  pod 'CRSPartnerBLESDK', '~> 0.1.2'
-end
-
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    next unless target.name == 'SwiftProtobuf'
-
-    target.build_configurations.each do |config|
-      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
-    end
-  end
+  pod 'CRSPartnerBLESDK', '~> 0.1.3'
 end
 ```
-
-Pod 会从 CocoaPods 源码解析 `SwiftProtobuf 1.37.0`。保留上面的 `post_install` 配置，确保 CocoaPods 编译 SwiftProtobuf 时开启 module stability。
 
 业务代码引入：
 
@@ -100,6 +86,8 @@ import CRSPartnerBLESDK
 ```
 
 业务代码通过 `CRSPartnerBLESDK` 提供的 public API 完成接入。
+
+Demo 工程包含 `CRSPartnerBLEDemoPods` 和 `CRSPartnerBLEDemoSPM` 两个 target，分别用于验证 CocoaPods 和 Swift Package Manager 接入。`CRSPartnerBLEDemoPods` 保留默认 demo Bundle ID 和 callback scheme；`CRSPartnerBLEDemoSPM` 使用独立 Bundle ID 和 callback scheme，完整授权联调前需要在服务端单独登记。
 
 ## 4. 初始化
 
@@ -221,7 +209,7 @@ let hrToken = try await CRSPartnerBLESDKClient.shared.startHeartBroadcast(
 hrToken.stop()
 ```
 
-`CRSHrSample` 字段说明：
+`CRSHeartRateSample` 字段说明：
 
 | 字段 | 说明 |
 | --- | --- |

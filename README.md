@@ -18,8 +18,6 @@ https://github.com/coroschina/CRSPartnerBLESDK-iOS.git
 
 Select the `CRSPartnerBLESDK` product.
 
-The SDK depends on `SwiftProtobuf 1.37.0`. Package managers resolve this dependency from source; do not add a separate vendored `SwiftProtobuf.xcframework`.
-
 ## CocoaPods
 
 Add the SDK to your `Podfile`:
@@ -29,21 +27,11 @@ platform :ios, '14.0'
 
 target 'YourApp' do
   use_frameworks!
-  pod 'CRSPartnerBLESDK', '~> 0.1.2'
-end
-
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    next unless target.name == 'SwiftProtobuf'
-
-    target.build_configurations.each do |config|
-      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
-    end
-  end
+  pod 'CRSPartnerBLESDK', '~> 0.1.3'
 end
 ```
 
-The pod includes `CRSPartnerBLESDK.xcframework` and resolves `SwiftProtobuf 1.37.0` from CocoaPods source. Keep the `post_install` block so CocoaPods builds SwiftProtobuf with module stability enabled.
+The pod includes `CRSPartnerBLESDK.xcframework`.
 
 ## Basic Usage
 
@@ -82,7 +70,7 @@ See [Docs/IntegrationGuide.md](Docs/IntegrationGuide.md).
 
 ## Demo
 
-The demo app is in [Demo](Demo). It uses CocoaPods:
+The demo app is in [Demo](Demo). It contains two targets so CocoaPods and Swift Package Manager can be verified independently:
 
 ```sh
 cd Demo
@@ -90,6 +78,9 @@ pod install
 open CRSPartnerBLEDemo.xcworkspace
 ```
 
+Build `CRSPartnerBLEDemoPods` to verify CocoaPods integration, or build `CRSPartnerBLEDemoSPM` to verify Swift Package Manager integration.
+`CRSPartnerBLEDemoPods` keeps the default demo bundle ID and callback scheme. `CRSPartnerBLEDemoSPM` uses a separate bundle ID and callback scheme, so register those values before running the full authorization flow from that target.
+
 ## Version
 
-Current version: `0.1.2`.
+Current version: `0.1.3`.

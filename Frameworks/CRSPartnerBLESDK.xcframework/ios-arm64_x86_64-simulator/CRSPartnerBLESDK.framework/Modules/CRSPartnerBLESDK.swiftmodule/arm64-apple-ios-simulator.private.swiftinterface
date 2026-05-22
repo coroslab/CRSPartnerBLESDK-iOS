@@ -7,7 +7,6 @@ import CommonCrypto
 import Foundation
 import Security
 import Swift
-import SwiftProtobuf
 import UIKit
 import _Concurrency
 import _StringProcessing
@@ -25,7 +24,7 @@ import _SwiftConcurrencyShims
   final public func listAuthorizedDevices() async throws -> [CRSPartnerBLESDK.CRSAuthorizedDevice]
   final public func revoke() async throws
   @discardableResult
-  final public func startHeartBroadcast(sportStartUtc: Swift.UInt32, onSample: @escaping @Sendable (CRSPartnerBLESDK.CRSHrSample) -> Swift.Void) async throws -> CRSPartnerBLESDK.CRSHeartBroadcastResult
+  final public func startHeartBroadcast(sportStartUtc: Swift.UInt32, onSample: @escaping @Sendable (CRSPartnerBLESDK.CRSHeartRateSample) -> Swift.Void) async throws -> CRSPartnerBLESDK.CRSHeartBroadcastResult
 }
 public enum CRSLogLevel : Swift.String, Swift.Equatable, Swift.Sendable {
   case debug
@@ -60,6 +59,59 @@ public struct CRSLogEntry : Swift.Equatable, Swift.Sendable {
     get
   }
   public static func == (a: CRSPartnerBLESDK.CRSLogEntry, b: CRSPartnerBLESDK.CRSLogEntry) -> Swift.Bool
+}
+public enum CRSServerEnvironmentType : Swift.RawRepresentable, Swift.Equatable, Swift.Sendable {
+  public typealias RawValue = Swift.Int
+  case serverEnvironmentProduction
+  case serverEnvironmentTest
+  case UNRECOGNIZED(Swift.Int)
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum CRSSdkErrorCode : Swift.RawRepresentable, Swift.Equatable, Swift.Sendable {
+  public typealias RawValue = Swift.Int
+  case ok
+  case invalidArgument
+  case notAuthorized
+  case deviceNotReady
+  case commandTimeout
+  case ackTimeout
+  case streamInterrupted
+  case rebindRequired
+  case permissionRevoked
+  case invalidPayload
+  case environmentMismatch
+  case bluetoothPoweredOff
+  case bluetoothUnauthorized
+  case watchUserExitLocked
+  case commandChannelAuthFailed
+  case internalError
+  case serverError
+  case serverLoginInvalid
+  case serverInvalidParameter
+  case serverNoData
+  case serverRateLimited
+  case serverInvalidContent
+  case serverInvalidClient
+  case serverInvalidScope
+  case serverExpired
+  case serverInvalidSignature
+  case serverKeyUnavailable
+  case serverExpiredKey
+  case serverUnauthorizedDevice
+  case serverDeviceDisconnected
+  case serverInvalidAuthorizedDevices
+  case serverUserDenied
+  case serverInvalidGrant
+  case serverGrantRevoked
+  case serverDeviceNotExist
+  case UNRECOGNIZED(Swift.Int)
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
 }
 public struct CRSSdkInitConfig : Swift.Equatable, Swift.Sendable {
   public let clientId: Swift.String
@@ -99,6 +151,13 @@ public struct CRSDeviceKey : Swift.Hashable, Swift.Sendable {
     get
   }
 }
+public struct CRSHeartRateSample : Swift.Equatable, Swift.Sendable {
+  public let sportStartUtc: Swift.UInt32
+  public let timestampS: Swift.UInt32
+  public let heartRate: Swift.UInt32
+  public init(sportStartUtc: Swift.UInt32, timestampS: Swift.UInt32, heartRate: Swift.UInt32)
+  public static func == (a: CRSPartnerBLESDK.CRSHeartRateSample, b: CRSPartnerBLESDK.CRSHeartRateSample) -> Swift.Bool
+}
 public struct CRSHeartBroadcastResult : Swift.Equatable, CRSPartnerBLESDK.CRSCancellable, Swift.Sendable {
   public let protocolRet: Swift.UInt32
   public init(protocolRet: Swift.UInt32)
@@ -132,108 +191,6 @@ final public class CRSAnyCancellable : CRSPartnerBLESDK.CRSCancellable, @uncheck
   public init(_ onCancel: @escaping () -> Swift.Void)
   final public func cancel()
   @objc deinit
-}
-public struct CRSHrmBroadcastSwitch {
-  public var onoff: Swift.UInt32
-  public var sportStartUtc: Swift.UInt32
-  public var unknownFields: SwiftProtobuf.UnknownStorage
-  public init()
-}
-public struct CRSHrSample {
-  public var sportStartUtc: Swift.UInt32
-  public var timestampS: Swift.UInt32
-  public var heartRate: Swift.UInt32
-  public var unknownFields: SwiftProtobuf.UnknownStorage
-  public init()
-}
-extension CRSPartnerBLESDK.CRSHrmBroadcastSwitch : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: Swift.String
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
-  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
-  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
-  public static func == (lhs: CRSPartnerBLESDK.CRSHrmBroadcastSwitch, rhs: CRSPartnerBLESDK.CRSHrmBroadcastSwitch) -> Swift.Bool
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-extension CRSPartnerBLESDK.CRSHrSample : SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: Swift.String
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
-  public mutating func decodeMessage<D>(decoder: inout D) throws where D : SwiftProtobuf.Decoder
-  public func traverse<V>(visitor: inout V) throws where V : SwiftProtobuf.Visitor
-  public static func == (lhs: CRSPartnerBLESDK.CRSHrSample, rhs: CRSPartnerBLESDK.CRSHrSample) -> Swift.Bool
-  public var hashValue: Swift.Int {
-    get
-  }
-}
-public enum CRSServerEnvironmentType : SwiftProtobuf.Enum {
-  public typealias RawValue = Swift.Int
-  case serverEnvironmentProduction
-  case serverEnvironmentTest
-  case UNRECOGNIZED(Swift.Int)
-  public init()
-  public init?(rawValue: Swift.Int)
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-extension CRSPartnerBLESDK.CRSServerEnvironmentType : Swift.CaseIterable {
-  public static var allCases: [CRSPartnerBLESDK.CRSServerEnvironmentType]
-  public typealias AllCases = [CRSPartnerBLESDK.CRSServerEnvironmentType]
-}
-public enum CRSSdkErrorCode : SwiftProtobuf.Enum {
-  public typealias RawValue = Swift.Int
-  case ok
-  case invalidArgument
-  case notAuthorized
-  case deviceNotReady
-  case commandTimeout
-  case ackTimeout
-  case streamInterrupted
-  case rebindRequired
-  case permissionRevoked
-  case invalidPayload
-  case environmentMismatch
-  case bluetoothPoweredOff
-  case bluetoothUnauthorized
-  case watchUserExitLocked
-  case commandChannelAuthFailed
-  case internalError
-  case serverError
-  case serverLoginInvalid
-  case serverInvalidParameter
-  case serverNoData
-  case serverRateLimited
-  case serverInvalidContent
-  case serverInvalidClient
-  case serverInvalidScope
-  case serverExpired
-  case serverInvalidSignature
-  case serverKeyUnavailable
-  case serverExpiredKey
-  case serverUnauthorizedDevice
-  case serverDeviceDisconnected
-  case serverInvalidAuthorizedDevices
-  case serverUserDenied
-  case serverInvalidGrant
-  case serverGrantRevoked
-  case serverDeviceNotExist
-  case UNRECOGNIZED(Swift.Int)
-  public init()
-  public init?(rawValue: Swift.Int)
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-extension CRSPartnerBLESDK.CRSSdkErrorCode : Swift.CaseIterable {
-  public static var allCases: [CRSPartnerBLESDK.CRSSdkErrorCode]
-  public typealias AllCases = [CRSPartnerBLESDK.CRSSdkErrorCode]
-}
-extension CRSPartnerBLESDK.CRSServerEnvironmentType : SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
-}
-extension CRSPartnerBLESDK.CRSSdkErrorCode : SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap
 }
 extension CRSPartnerBLESDK.CRSLogLevel : Swift.Hashable {}
 extension CRSPartnerBLESDK.CRSLogLevel : Swift.RawRepresentable {}

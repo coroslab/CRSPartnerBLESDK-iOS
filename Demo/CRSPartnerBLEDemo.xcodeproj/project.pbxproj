@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		134CF2B9A4C350106A0155F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F009EFCA02C1A82040126A3 /* Foundation.framework */; };
 		15147D12C9737EA10744C2FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F009EFCA02C1A82040126A3 /* Foundation.framework */; };
 		49B02CF3C8626EC8F0AEC802 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31136FBC31214D8BD8AAA453 /* ContentView.swift */; };
-		9679773031010770B6AAB539 /* Pods_CRSPartnerBLEDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D73DC765BE2CB5F1AD64BFFE /* Pods_CRSPartnerBLEDemo.framework */; };
+		87C3360268366619B5D3893B /* CRSPartnerBLEDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039D66F43223C4D9BD0F2E00 /* CRSPartnerBLEDemoApp.swift */; };
+		8A8E67AF3A45B568AEB5C563 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EBD0716BDAB7D6FB913C1CD /* Assets.xcassets */; };
+		9912E8E0E7266E7FDFEA3B8B /* Pods_CRSPartnerBLEDemoPods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7478EA4536E50F735B80FB7B /* Pods_CRSPartnerBLEDemoPods.framework */; };
+		9B068D001F534D1B6EC11742 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31136FBC31214D8BD8AAA453 /* ContentView.swift */; };
 		C692D2ED07088082EF129755 /* CRSPartnerBLEDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039D66F43223C4D9BD0F2E00 /* CRSPartnerBLEDemoApp.swift */; };
+		FD71940599CA8C42A3343C2A /* CRSPartnerBLESDK in Frameworks */ = {isa = PBXBuildFile; productRef = 062D660E412FD5528A4CC0CB /* CRSPartnerBLESDK */; };
 		FFB2AE21C1879F0DD66B9F0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EBD0716BDAB7D6FB913C1CD /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		039D66F43223C4D9BD0F2E00 /* CRSPartnerBLEDemoApp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CRSPartnerBLEDemoApp.swift; sourceTree = "<group>"; };
-		102E0F6204C19D3D2251EC1C /* CRSPartnerBLEDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRSPartnerBLEDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		102E0F6204C19D3D2251EC1C /* CRSPartnerBLEDemoPods.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = CRSPartnerBLEDemoPods.app; path = CRSPartnerBLEDemoPods.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31136FBC31214D8BD8AAA453 /* ContentView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3EBD0716BDAB7D6FB913C1CD /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		74B90CB90FEAEE548F10C888 /* Pods-CRSPartnerBLEDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRSPartnerBLEDemo.debug.xcconfig"; path = "Target Support Files/Pods-CRSPartnerBLEDemo/Pods-CRSPartnerBLEDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		923F137B9A5CE9D492490435 /* Pods-CRSPartnerBLEDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRSPartnerBLEDemo.release.xcconfig"; path = "Target Support Files/Pods-CRSPartnerBLEDemo/Pods-CRSPartnerBLEDemo.release.xcconfig"; sourceTree = "<group>"; };
+		64C8FD99C7B6A42FB465FF22 /* Pods-CRSPartnerBLEDemoPods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRSPartnerBLEDemoPods.release.xcconfig"; path = "Target Support Files/Pods-CRSPartnerBLEDemoPods/Pods-CRSPartnerBLEDemoPods.release.xcconfig"; sourceTree = "<group>"; };
+		6B13C852F950FEA795AA11C2 /* Pods-CRSPartnerBLEDemoPods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CRSPartnerBLEDemoPods.debug.xcconfig"; path = "Target Support Files/Pods-CRSPartnerBLEDemoPods/Pods-CRSPartnerBLEDemoPods.debug.xcconfig"; sourceTree = "<group>"; };
+		7478EA4536E50F735B80FB7B /* Pods_CRSPartnerBLEDemoPods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRSPartnerBLEDemoPods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81BF53D9BCB5BA20F3358490 /* CRSPartnerBLEDemoSPM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = CRSPartnerBLEDemoSPM.app; path = CRSPartnerBLEDemoSPM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F009EFCA02C1A82040126A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		D287502A326FC96099D35E6F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D73DC765BE2CB5F1AD64BFFE /* Pods_CRSPartnerBLEDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CRSPartnerBLEDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,7 +38,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				15147D12C9737EA10744C2FC /* Foundation.framework in Frameworks */,
-				9679773031010770B6AAB539 /* Pods_CRSPartnerBLEDemo.framework in Frameworks */,
+				9912E8E0E7266E7FDFEA3B8B /* Pods_CRSPartnerBLEDemoPods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89BA5EDC3C630DA6EE17EA7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				134CF2B9A4C350106A0155F6 /* Foundation.framework in Frameworks */,
+				FD71940599CA8C42A3343C2A /* CRSPartnerBLESDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,8 +57,8 @@
 		1709824D0ED56B813C7A688D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				923F137B9A5CE9D492490435 /* Pods-CRSPartnerBLEDemo.release.xcconfig */,
-				74B90CB90FEAEE548F10C888 /* Pods-CRSPartnerBLEDemo.debug.xcconfig */,
+				64C8FD99C7B6A42FB465FF22 /* Pods-CRSPartnerBLEDemoPods.release.xcconfig */,
+				6B13C852F950FEA795AA11C2 /* Pods-CRSPartnerBLEDemoPods.debug.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
@@ -52,7 +67,8 @@
 		7A71E8E36858759A36F98B02 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				102E0F6204C19D3D2251EC1C /* CRSPartnerBLEDemo.app */,
+				102E0F6204C19D3D2251EC1C /* CRSPartnerBLEDemoPods.app */,
+				81BF53D9BCB5BA20F3358490 /* CRSPartnerBLEDemoSPM.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,7 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				C25A0FC4CAB0C429381333FB /* iOS */,
-				D73DC765BE2CB5F1AD64BFFE /* Pods_CRSPartnerBLEDemo.framework */,
+				7478EA4536E50F735B80FB7B /* Pods_CRSPartnerBLEDemoPods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -99,23 +115,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D41F19B27BD92E5F4D5CA03A /* CRSPartnerBLEDemo */ = {
+		302229E9A168E44D95AB3D68 /* CRSPartnerBLEDemoSPM */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9E9614D2B96D3DA802F42BE9 /* Build configuration list for PBXNativeTarget "CRSPartnerBLEDemo" */;
+			buildConfigurationList = 619A5A4C497BAC85C353DA58 /* Build configuration list for PBXNativeTarget "CRSPartnerBLEDemoSPM" */;
 			buildPhases = (
-				26D35A55383227D04F3704CC /* [CP] Check Pods Manifest.lock */,
-				7B21E2CC14ECC7DDDCFA1CA5 /* Sources */,
-				724AB04A53DE8A40C7A4C919 /* Frameworks */,
-				3F6E8FF24FACA39B3701E34E /* Resources */,
-				EEB2EE78E4E5A91E82C5F032 /* [CP] Embed Pods Frameworks */,
+				DBBCCF89C704D6A4E1DF2EAE /* Sources */,
+				89BA5EDC3C630DA6EE17EA7B /* Frameworks */,
+				D3318101A30A70AA60F9B4A4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CRSPartnerBLEDemo;
-			productName = CRSPartnerBLEDemo;
-			productReference = 102E0F6204C19D3D2251EC1C /* CRSPartnerBLEDemo.app */;
+			name = CRSPartnerBLEDemoSPM;
+			packageProductDependencies = (
+				062D660E412FD5528A4CC0CB /* CRSPartnerBLESDK */,
+			);
+			productName = CRSPartnerBLEDemoSPM;
+			productReference = 81BF53D9BCB5BA20F3358490 /* CRSPartnerBLEDemoSPM.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D41F19B27BD92E5F4D5CA03A /* CRSPartnerBLEDemoPods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E9614D2B96D3DA802F42BE9 /* Build configuration list for PBXNativeTarget "CRSPartnerBLEDemoPods" */;
+			buildPhases = (
+				26D35A55383227D04F3704CC /* [CP] Check Pods Manifest.lock */,
+				7B21E2CC14ECC7DDDCFA1CA5 /* Sources */,
+				724AB04A53DE8A40C7A4C919 /* Frameworks */,
+				3F6E8FF24FACA39B3701E34E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CRSPartnerBLEDemoPods;
+			productName = CRSPartnerBLEDemoPods;
+			productReference = 102E0F6204C19D3D2251EC1C /* CRSPartnerBLEDemoPods.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -137,12 +172,16 @@
 			);
 			mainGroup = EA6E2BE9A89C77BF1B4F52F6;
 			minimizedProjectReferenceProxies = 0;
+			packageReferences = (
+				D910C1FBB44E9528E1B00014 /* XCLocalSwiftPackageReference ".." */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7A71E8E36858759A36F98B02 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D41F19B27BD92E5F4D5CA03A /* CRSPartnerBLEDemo */,
+				D41F19B27BD92E5F4D5CA03A /* CRSPartnerBLEDemoPods */,
+				302229E9A168E44D95AB3D68 /* CRSPartnerBLEDemoSPM */,
 			);
 		};
 /* End PBXProject section */
@@ -153,6 +192,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFB2AE21C1879F0DD66B9F0F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3318101A30A70AA60F9B4A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A8E67AF3A45B568AEB5C563 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,29 +221,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CRSPartnerBLEDemo-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-CRSPartnerBLEDemoPods-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EEB2EE78E4E5A91E82C5F032 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CRSPartnerBLEDemo/Pods-CRSPartnerBLEDemo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CRSPartnerBLEDemo/Pods-CRSPartnerBLEDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -208,6 +237,15 @@
 			files = (
 				C692D2ED07088082EF129755 /* CRSPartnerBLEDemoApp.swift in Sources */,
 				49B02CF3C8626EC8F0AEC802 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBBCCF89C704D6A4E1DF2EAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87C3360268366619B5D3893B /* CRSPartnerBLEDemoApp.swift in Sources */,
+				9B068D001F534D1B6EC11742 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,12 +308,14 @@
 		};
 		8394F150FDAF1C131BD7A6BD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 923F137B9A5CE9D492490435 /* Pods-CRSPartnerBLEDemo.release.xcconfig */;
+			baseConfigurationReference = 64C8FD99C7B6A42FB465FF22 /* Pods-CRSPartnerBLEDemoPods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_STYLE = Automatic;
+				DEMO_CALLBACK_SCHEME = crspartnerbledemo;
+				DEMO_CALLBACK_URL_NAME = com.coros.partnerble.demo.callback;
 				DEVELOPMENT_TEAM = NCW52493Y3;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -283,7 +323,31 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coros.partnerble.demo;
-				PRODUCT_NAME = CRSPartnerBLEDemo;
+				PRODUCT_NAME = CRSPartnerBLEDemoPods;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB9E6D0E2A53AC6A6CDEA344 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEMO_CALLBACK_SCHEME = crspartnerbledemospm;
+				DEMO_CALLBACK_URL_NAME = com.coros.partnerble.demo.spm.callback;
+				DEVELOPMENT_TEAM = NCW52493Y3;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.coros.partnerble.demo.spm;
+				PRODUCT_NAME = CRSPartnerBLEDemoSPM;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -293,12 +357,14 @@
 		};
 		EE58B9849849D60DB1C4FEF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 74B90CB90FEAEE548F10C888 /* Pods-CRSPartnerBLEDemo.debug.xcconfig */;
+			baseConfigurationReference = 6B13C852F950FEA795AA11C2 /* Pods-CRSPartnerBLEDemoPods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_STYLE = Automatic;
+				DEMO_CALLBACK_SCHEME = crspartnerbledemo;
+				DEMO_CALLBACK_URL_NAME = com.coros.partnerble.demo.callback;
 				DEVELOPMENT_TEAM = NCW52493Y3;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = NO;
@@ -306,7 +372,30 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coros.partnerble.demo;
-				PRODUCT_NAME = CRSPartnerBLEDemo;
+				PRODUCT_NAME = CRSPartnerBLEDemoPods;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EFB6569B9EB02816B186E630 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_STYLE = Automatic;
+				DEMO_CALLBACK_SCHEME = crspartnerbledemospm;
+				DEMO_CALLBACK_URL_NAME = com.coros.partnerble.demo.spm.callback;
+				DEVELOPMENT_TEAM = NCW52493Y3;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.coros.partnerble.demo.spm;
+				PRODUCT_NAME = CRSPartnerBLEDemoSPM;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -377,7 +466,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9E9614D2B96D3DA802F42BE9 /* Build configuration list for PBXNativeTarget "CRSPartnerBLEDemo" */ = {
+		619A5A4C497BAC85C353DA58 /* Build configuration list for PBXNativeTarget "CRSPartnerBLEDemoSPM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB9E6D0E2A53AC6A6CDEA344 /* Release */,
+				EFB6569B9EB02816B186E630 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E9614D2B96D3DA802F42BE9 /* Build configuration list for PBXNativeTarget "CRSPartnerBLEDemoPods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8394F150FDAF1C131BD7A6BD /* Release */,
@@ -396,6 +494,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		D910C1FBB44E9528E1B00014 /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		062D660E412FD5528A4CC0CB /* CRSPartnerBLESDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D910C1FBB44E9528E1B00014 /* XCLocalSwiftPackageReference ".." */;
+			productName = CRSPartnerBLESDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6CB766555621021883EDCF1B /* Project object */;
 }

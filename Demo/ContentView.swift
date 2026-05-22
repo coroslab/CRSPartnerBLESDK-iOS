@@ -306,6 +306,8 @@ final class DemoViewModel: ObservableObject {
             return "rebindRequired"
         case .disconnected:
             return "disconnected"
+        @unknown default:
+            return "unknown"
         }
     }
 

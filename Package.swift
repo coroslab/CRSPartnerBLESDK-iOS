@@ -11,25 +11,15 @@ let package = Package(
         .library(
             name: "CRSPartnerBLESDK",
             targets: [
-                "CRSPartnerBLESDK",
-                "CRSPartnerBLESDKDependencies"
+                "CRSPartnerBLESDK"
             ]
         )
     ],
-    dependencies: [
-        .package(url: "https://github.com/apple/swift-protobuf.git", exact: "1.37.0")
-    ],
+    dependencies: [],
     targets: [
         .binaryTarget(
             name: "CRSPartnerBLESDK",
             path: "Frameworks/CRSPartnerBLESDK.xcframework"
-        ),
-        .target(
-            name: "CRSPartnerBLESDKDependencies",
-            dependencies: [
-                .product(name: "SwiftProtobuf", package: "swift-protobuf")
-            ],
-            path: "Support/CRSPartnerBLESDKDependencies"
         )
     ]
 )
