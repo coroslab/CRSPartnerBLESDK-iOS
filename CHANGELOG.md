@@ -1,5 +1,7 @@
 # Changelog
 
+[中文](CHANGELOG.zh-CN.md) | English
+
 ## 0.1.3
 
 - Removed the public SwiftProtobuf dependency from Swift Package Manager and CocoaPods integration.

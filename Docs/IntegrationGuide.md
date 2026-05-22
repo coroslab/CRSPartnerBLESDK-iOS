@@ -1,5 +1,7 @@
 # CRSPartnerBLESDK iOS 接入说明
 
+中文 | [English](IntegrationGuide.en.md)
+
 本文面向 Partner App iOS 接入方，只描述对外公开 API 和必要 App 配置。
 
 ## 1. 接入前准备

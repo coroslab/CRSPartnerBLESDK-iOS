@@ -1,5 +1,7 @@
 # CRSPartnerBLESDK iOS
 
+[中文](README.zh-CN.md) | English
+
 CRSPartnerBLESDK is the COROS Partner BLE SDK for iOS apps.
 
 ## Requirements
@@ -66,7 +68,7 @@ token.stop()
 
 ## Documentation
 
-See [Docs/IntegrationGuide.md](Docs/IntegrationGuide.md).
+See [English Integration Guide](Docs/IntegrationGuide.en.md) or [中文接入说明](Docs/IntegrationGuide.md).
 
 ## Demo
 
