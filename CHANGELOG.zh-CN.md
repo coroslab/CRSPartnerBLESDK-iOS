@@ -2,6 +2,11 @@
 
 中文 | [English](CHANGELOG.md)
 
+## 0.1.4
+
+- 将 SDK 对外公开仓库迁移到 GitHub `coroslab` 组织下。
+- 更新 Swift Package Manager 和 CocoaPods 源地址为 `github.com/coroslab/CRSPartnerBLESDK-iOS`。
+
 ## 0.1.3
 
 - 移除 Swift Package Manager 和 CocoaPods 接入中的 public SwiftProtobuf 依赖。

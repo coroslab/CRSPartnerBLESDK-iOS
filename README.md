@@ -15,7 +15,7 @@ CRSPartnerBLESDK is the COROS Partner BLE SDK for iOS apps.
 In Xcode, open **File > Add Package Dependencies** and add:
 
 ```text
-https://github.com/coroschina/CRSPartnerBLESDK-iOS.git
+https://github.com/coroslab/CRSPartnerBLESDK-iOS.git
 ```
 
 Select the `CRSPartnerBLESDK` product.
@@ -29,7 +29,7 @@ platform :ios, '14.0'
 
 target 'YourApp' do
   use_frameworks!
-  pod 'CRSPartnerBLESDK', '~> 0.1.3'
+  pod 'CRSPartnerBLESDK', '~> 0.1.4'
 end
 ```
 
@@ -85,4 +85,4 @@ Build `CRSPartnerBLEDemoPods` to verify CocoaPods integration, or build `CRSPart
 
 ## Version
 
-Current version: `0.1.3`.
+Current version: `0.1.4`.

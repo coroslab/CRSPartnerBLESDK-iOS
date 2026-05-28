@@ -2,6 +2,11 @@
 
 [中文](CHANGELOG.zh-CN.md) | English
 
+## 0.1.4
+
+- Moved the public SDK repository to the `coroslab` GitHub organization.
+- Updated Swift Package Manager and CocoaPods source URLs to `github.com/coroslab/CRSPartnerBLESDK-iOS`.
+
 ## 0.1.3
 
 - Removed the public SwiftProtobuf dependency from Swift Package Manager and CocoaPods integration.
