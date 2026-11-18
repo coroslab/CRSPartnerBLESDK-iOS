@@ -4,8 +4,6 @@
 
 CRSPartnerBLESDK 是面向 iOS Partner App 的 COROS Partner BLE SDK。
 
-本版修复重复授权时出现 `authorization is already pending` 的问题：再次调用 `authorize()` 会复用当前流程并唤醒 COROS，无需新增接口或调整现有调用方式。详见 [0.1.5 更新说明](CHANGELOG.zh-CN.md#015--2026-11-18)。
-
 ## 环境要求
 
 - iOS 14.0 或以上。
