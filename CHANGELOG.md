@@ -23,13 +23,6 @@
 pod 'CRSPartnerBLESDK', :git => 'https://github.com/coroslab/CRSPartnerBLESDK-iOS.git', :tag => '0.1.5'
 ```
 
-### Validation scope
-
-- All 62 automated tests passed, including 12 new regressions covering repeated/concurrent calls, reopening COROS, debouncing, caller cancellation, authorization cancellation, timeout retries, earlier link expiry, stale callbacks, and stale timers.
-- Built and checked all three binary architectures with a minimum target of iOS 14.0: device arm64, simulator arm64, and simulator x86_64. Public interface declarations are unchanged from 0.1.4 across all three architectures.
-- Both Swift Package Manager and CocoaPods demo targets compile for the iOS Simulator. Built with Xcode 27 / Swift 6.4; execution on iOS 14 devices and compilation with older Xcode versions have not been verified.
-- A physical-device authorization round trip between Xunji and COROS has not been performed; automated results do not constitute acceptance of the reported field issue.
-
 ## 0.1.4
 
 - Moved the public SDK repository to the `coroslab` GitHub organization.

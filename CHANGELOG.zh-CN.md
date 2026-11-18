@@ -23,13 +23,6 @@
 pod 'CRSPartnerBLESDK', :git => 'https://github.com/coroslab/CRSPartnerBLESDK-iOS.git', :tag => '0.1.5'
 ```
 
-### 验证范围
-
-- 62 项自动化测试通过，包含 12 项新增回归测试，覆盖重复/并发调用、再次唤醒、快速连点、调用方取消、授权取消、超时重试、链接提前过期、旧回调隔离及旧定时器隔离。
-- 已构建并核对三个架构的二进制最低目标均为 iOS 14.0：真机 arm64、模拟器 arm64 和 x86_64。与 0.1.4 对比，三个架构的公开接口声明均未变化。
-- Swift Package Manager 与 CocoaPods 两个 Demo 的 iOS 模拟器编译通过。使用 Xcode 27 / Swift 6.4 构建；未在旧版 Xcode 或 iOS 14 真机上运行验证。
-- 未进行训记 App 与 COROS 的双 App 真机授权联调，不将自动化结果视为现场问题已验收。
-
 ## 0.1.4
 
 - 将 SDK 对外公开仓库迁移到 GitHub `coroslab` 组织下。
