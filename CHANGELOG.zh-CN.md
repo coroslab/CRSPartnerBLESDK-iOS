@@ -2,6 +2,34 @@
 
 中文 | [English](CHANGELOG.md)
 
+## 0.1.5 — 2026-11-18
+
+### 修复授权等待状态导致无法再次检测
+
+- 修复上一轮授权尚未收到回调时，再次调用 `authorize()` 返回 `authorization is already pending` 的问题。典型场景是跳转 COROS 后直接切回 Partner App，再次点击“去高驰检测”或“重新检查”。
+- 同一 SDK 实例的重复/并发授权调用现在共用一轮服务端请求、授权 `state` 和回调结果。授权链接可用后，再次调用会复用该链接唤醒 COROS，不会覆盖首轮 `state`。
+- 合并正在执行的唤醒操作及间隔不足 1 秒的快速连点，避免反复跳转。
+- 取消某个调用方的 Task 只结束该调用方的等待；保留当前授权流程，后续 `authorize()` 仍可继续唤醒 COROS。
+- 等待流程最迟在 5 分钟后超时；签名链接更早到期时，以链接有效期为准。后续调用会清理过期流程并创建新一轮授权。SDK 回到前台时也会检查过期状态。
+- 隔离每轮授权的定时器和回调；上一轮迟到的回调不会写入当前流程，旧定时器也不会结束新一轮授权。
+
+### 升级与兼容
+
+- 公开 API 保持不变，没有新增接口。训记等 Partner App 只需升级 SDK，无需增加取消接口调用或修改现有 `authorize()` 调用方式。
+- 原有接入要求保持有效：收到 COROS 回跳 URL 后，原样转交给发起授权的同一个 SDK 实例的 `handleOpenURL(_:)`。SDK 无法替代宿主 App 接收系统 URL 回调。
+- Swift Package Manager 选择版本 `0.1.5`；CocoaPods 可通过本仓库 Git tag 固定该版本：
+
+```ruby
+pod 'CRSPartnerBLESDK', :git => 'https://github.com/coroslab/CRSPartnerBLESDK-iOS.git', :tag => '0.1.5'
+```
+
+### 验证范围
+
+- 62 项自动化测试通过，包含 12 项新增回归测试，覆盖重复/并发调用、再次唤醒、快速连点、调用方取消、授权取消、超时重试、链接提前过期、旧回调隔离及旧定时器隔离。
+- 已构建并核对三个架构的二进制最低目标均为 iOS 14.0：真机 arm64、模拟器 arm64 和 x86_64。与 0.1.4 对比，三个架构的公开接口声明均未变化。
+- Swift Package Manager 与 CocoaPods 两个 Demo 的 iOS 模拟器编译通过。使用 Xcode 27 / Swift 6.4 构建；未在旧版 Xcode 或 iOS 14 真机上运行验证。
+- 未进行训记 App 与 COROS 的双 App 真机授权联调，不将自动化结果视为现场问题已验收。
+
 ## 0.1.4
 
 - 将 SDK 对外公开仓库迁移到 GitHub `coroslab` 组织下。

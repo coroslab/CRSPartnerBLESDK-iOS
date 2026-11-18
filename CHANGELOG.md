@@ -2,6 +2,34 @@
 
 [中文](CHANGELOG.zh-CN.md) | English
 
+## 0.1.5 — 2026-11-18
+
+### Fix authorization remaining pending when checking again
+
+- Fixed `authorization is already pending` when `authorize()` is called again before the previous authorization callback arrives, for example after switching back from COROS and tapping the partner app's check/open-COROS button again.
+- Repeated/concurrent authorization calls on the same SDK instance now share one server request, authorization `state`, and callback result. Once the link is available, another call reopens COROS using that same link without replacing the original `state`.
+- Coalesced URL opens already in flight and rapid taps less than one second apart.
+- Cancelling a caller's Task only ends that caller's wait. The current flow remains available for a subsequent `authorize()` call to reopen COROS.
+- Authorization waits time out after at most five minutes, or earlier when the signed link expires. The next call replaces an expired flow with a fresh authorization request. The SDK also checks expiry when the app becomes active.
+- Isolated callbacks and timers by authorization session so stale callbacks do not update the active flow and old timers cannot end a newer flow.
+
+### Upgrade and compatibility
+
+- Public APIs are unchanged; no new interface is required. Partner apps, including Xunji, only need to update the SDK without adding cancellation hooks or changing existing `authorize()` calls.
+- The existing integration requirement still applies: forward COROS callback URLs unchanged to `handleOpenURL(_:)` on the same SDK instance that started authorization. The SDK cannot receive the host app's system URL callbacks on its behalf.
+- Select version `0.1.5` in Swift Package Manager. CocoaPods users can pin this repository's Git tag:
+
+```ruby
+pod 'CRSPartnerBLESDK', :git => 'https://github.com/coroslab/CRSPartnerBLESDK-iOS.git', :tag => '0.1.5'
+```
+
+### Validation scope
+
+- All 62 automated tests passed, including 12 new regressions covering repeated/concurrent calls, reopening COROS, debouncing, caller cancellation, authorization cancellation, timeout retries, earlier link expiry, stale callbacks, and stale timers.
+- Built and checked all three binary architectures with a minimum target of iOS 14.0: device arm64, simulator arm64, and simulator x86_64. Public interface declarations are unchanged from 0.1.4 across all three architectures.
+- Both Swift Package Manager and CocoaPods demo targets compile for the iOS Simulator. Built with Xcode 27 / Swift 6.4; execution on iOS 14 devices and compilation with older Xcode versions have not been verified.
+- A physical-device authorization round trip between Xunji and COROS has not been performed; automated results do not constitute acceptance of the reported field issue.
+
 ## 0.1.4
 
 - Moved the public SDK repository to the `coroslab` GitHub organization.

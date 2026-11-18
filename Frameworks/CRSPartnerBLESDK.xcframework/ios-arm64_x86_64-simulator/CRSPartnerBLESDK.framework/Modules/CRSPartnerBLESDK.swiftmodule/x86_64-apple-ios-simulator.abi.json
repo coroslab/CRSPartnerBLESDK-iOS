@@ -13,6 +13,13 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CRSPartnerBLESDK"
+      },
+      {
+        "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
         "declKind": "Import",
@@ -6199,1393 +6206,1442 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDK\/CRSPartnerBLESDK.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDK\/CRSAuthorizationSessionManager.swift",
+      "kind": "Dictionary",
+      "offset": 443,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDK\/CRSAuthorizationSessionManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 574,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDK\/CRSAuthorizationSessionManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 613,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDK\/CRSAuthorizationSessionManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1462,
+      "length": 3,
+      "value": "300"
+    },
+    {
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDK\/CRSAuthorizationSessionManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1498,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDK\/CRSPartnerBLESDK.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1709,
+      "length": 3,
+      "value": "300"
+    },
+    {
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDK\/CRSPartnerBLESDK.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1766,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDK\/CRSPartnerBLESDK.swift",
       "kind": "StringLiteral",
-      "offset": 3331,
+      "offset": 3635,
       "length": 8,
       "value": "\"manual\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSBLEFrameCodec.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSBLEFrameCodec.swift",
       "kind": "IntegerLiteral",
       "offset": 93,
       "length": 4,
       "value": "0xCC"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSBLEFrameCodec.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSBLEFrameCodec.swift",
       "kind": "IntegerLiteral",
       "offset": 136,
       "length": 4,
       "value": "0x10"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSBLEFrameCodec.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSBLEFrameCodec.swift",
       "kind": "IntegerLiteral",
       "offset": 247,
       "length": 2,
       "value": "20"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSBLEFrameCodec.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSBLEFrameCodec.swift",
       "kind": "IntegerLiteral",
       "offset": 269,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSBLEFrameCodec.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSBLEFrameCodec.swift",
       "kind": "BooleanLiteral",
       "offset": 293,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSBLEFrameCodec.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSBLEFrameCodec.swift",
       "kind": "Array",
       "offset": 4493,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSBLEFrameCodec.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSBLEFrameCodec.swift",
       "kind": "BooleanLiteral",
       "offset": 5875,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSCommandChannel.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSCommandChannel.swift",
       "kind": "IntegerLiteral",
       "offset": 159,
       "length": 13,
       "value": "5000000000"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSCommandChannel.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSCommandChannel.swift",
       "kind": "IntegerLiteral",
       "offset": 193,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSCommandChannel.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSCommandChannel.swift",
       "kind": "Dictionary",
       "offset": 957,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSCoreBluetoothCommandService.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSCoreBluetoothCommandService.swift",
       "kind": "StringLiteral",
       "offset": 2000,
       "length": 36,
       "value": "\"com.coros.partnerble.corebluetooth\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSCoreBluetoothCommandService.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSCoreBluetoothCommandService.swift",
       "kind": "Dictionary",
       "offset": 2278,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSCoreBluetoothCommandService.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSCoreBluetoothCommandService.swift",
       "kind": "Dictionary",
       "offset": 2373,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSMockBLECommandService.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSMockBLECommandService.swift",
       "kind": "Dictionary",
       "offset": 377,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSMockBLECommandService.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSMockBLECommandService.swift",
       "kind": "StringLiteral",
       "offset": 449,
       "length": 16,
       "value": "\"MOCK_DEVICE_ID\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSMockBLECommandService.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSMockBLECommandService.swift",
       "kind": "StringLiteral",
       "offset": 480,
       "length": 10,
       "value": "\"PACE_PRO\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSPartnerBLEUUID.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSPartnerBLEUUID.swift",
       "kind": "StringLiteral",
       "offset": 76,
       "length": 38,
       "value": "\"6e400001-b5a3-f393-e0a9-77656c6f6f70\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSPartnerBLEUUID.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSPartnerBLEUUID.swift",
       "kind": "StringLiteral",
       "offset": 159,
       "length": 38,
       "value": "\"6e400002-b5a3-f393-e0a9-77656c6f6f70\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSPartnerBLEUUID.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSPartnerBLEUUID.swift",
       "kind": "StringLiteral",
       "offset": 241,
       "length": 38,
       "value": "\"6e400003-b5a3-f393-e0a9-77656c6f6f70\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSPartnerBLEUUID.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSPartnerBLEUUID.swift",
       "kind": "StringLiteral",
       "offset": 315,
       "length": 6,
       "value": "\"180A\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSPartnerBLEUUID.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSPartnerBLEUUID.swift",
       "kind": "StringLiteral",
       "offset": 365,
       "length": 6,
       "value": "\"2A24\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSPartnerBLEUUID.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSPartnerBLEUUID.swift",
       "kind": "StringLiteral",
       "offset": 414,
       "length": 6,
       "value": "\"2A25\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSPartnerBLEUUID.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSPartnerBLEUUID.swift",
       "kind": "StringLiteral",
       "offset": 455,
       "length": 6,
       "value": "\"180D\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKBLE\/CRSPartnerBLEUUID.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKBLE\/CRSPartnerBLEUUID.swift",
       "kind": "StringLiteral",
       "offset": 514,
       "length": 6,
       "value": "\"2A37\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKCore\/AuthorizationCoordinator.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKCore\/AuthorizationCoordinator.swift",
       "kind": "Dictionary",
       "offset": 385,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKCore\/CRSHeartBroadcastSessionManager.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKCore\/CRSHeartBroadcastSessionManager.swift",
       "kind": "IntegerLiteral",
       "offset": 324,
       "length": 4,
       "value": "0x35"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKCore\/CRSHeartBroadcastSessionManager.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKCore\/CRSHeartBroadcastSessionManager.swift",
       "kind": "IntegerLiteral",
       "offset": 379,
       "length": 4,
       "value": "0x36"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKCore\/CRSHeartBroadcastSessionManager.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKCore\/CRSHeartBroadcastSessionManager.swift",
       "kind": "Array",
       "offset": 961,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKCore\/CRSHeartBroadcastSessionManager.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKCore\/CRSHeartBroadcastSessionManager.swift",
       "kind": "IntegerLiteral",
       "offset": 1215,
       "length": 14,
       "value": "60000000000"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKCore\/CRSSdkLogger.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKCore\/CRSSdkLogger.swift",
       "kind": "BooleanLiteral",
       "offset": 1144,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKCore\/CRSSdkLogger.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKCore\/CRSSdkLogger.swift",
       "kind": "BooleanLiteral",
       "offset": 1183,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKCore\/CRSSdkLogger.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKCore\/CRSSdkLogger.swift",
       "kind": "BooleanLiteral",
       "offset": 1219,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKCore\/CRSSdkLogger.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKCore\/CRSSdkLogger.swift",
       "kind": "StringLiteral",
       "offset": 1256,
       "length": 22,
       "value": "\"CRSPartnerBLESDK.log\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKCore\/CRSSdkLogger.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKCore\/CRSSdkLogger.swift",
       "kind": "IntegerLiteral",
       "offset": 1312,
       "length": 3,
       "value": "200"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKCore\/CRSSdkLogger.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKCore\/CRSSdkLogger.swift",
       "kind": "BooleanLiteral",
       "offset": 1775,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKCore\/CRSSdkLogger.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKCore\/CRSSdkLogger.swift",
       "kind": "BooleanLiteral",
       "offset": 1814,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKCore\/CRSSdkLogger.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKCore\/CRSSdkLogger.swift",
       "kind": "IntegerLiteral",
       "offset": 1853,
       "length": 3,
       "value": "200"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKCore\/CRSSdkLogger.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKCore\/CRSSdkLogger.swift",
       "kind": "Array",
       "offset": 3574,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKCore\/PublicModels.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKCore\/PublicModels.swift",
       "kind": "StringLiteral",
       "offset": 7357,
       "length": 21,
       "value": "\"ble.heart_broadcast\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKCore\/PublicModels.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKCore\/PublicModels.swift",
       "kind": "IntegerLiteral",
       "offset": 12355,
       "length": 2,
       "value": "20"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSAPIClient.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSAPIClient.swift",
       "kind": "IntegerLiteral",
       "offset": 3721,
       "length": 4,
       "value": "2048"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSAuthEndpoints.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSAuthEndpoints.swift",
       "kind": "StringLiteral",
       "offset": 832,
       "length": 26,
       "value": "\"\/v1\/sdk\/auth\/getAuthInfo\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSAuthEndpoints.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSAuthEndpoints.swift",
       "kind": "StringLiteral",
       "offset": 3115,
       "length": 22,
       "value": "\"\/v1\/sdk\/auth\/refresh\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSAuthEndpoints.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSAuthEndpoints.swift",
       "kind": "StringLiteral",
       "offset": 4185,
       "length": 21,
       "value": "\"\/v1\/sdk\/auth\/revoke\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSAuthServerConfig.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSAuthServerConfig.swift",
       "kind": "StringLiteral",
       "offset": 248,
       "length": 7,
       "value": "\"0.1.0\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSAuthServerConfig.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSAuthServerConfig.swift",
       "kind": "StringLiteral",
       "offset": 288,
       "length": 16,
       "value": "\"partner_logout\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSAuthServerConfig.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSAuthServerConfig.swift",
       "kind": "StringLiteral",
       "offset": 591,
       "length": 7,
       "value": "\"0.1.0\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSAuthSignedExecutor.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSAuthSignedExecutor.swift",
       "kind": "Dictionary",
       "offset": 870,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSAuthSignedExecutor.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSAuthSignedExecutor.swift",
       "kind": "IntegerLiteral",
       "offset": 926,
       "length": 6,
       "value": "86400"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSAuthSignedExecutor.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSAuthSignedExecutor.swift",
       "kind": "BooleanLiteral",
       "offset": 1163,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSAuthSignedExecutor.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSAuthSignedExecutor.swift",
       "kind": "BooleanLiteral",
       "offset": 6451,
       "length": 5,
       "value": "false"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSMockAuthorizationService.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSMockAuthorizationService.swift",
       "kind": "StringLiteral",
       "offset": 289,
       "length": 16,
       "value": "\"MOCK_DEVICE_ID\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSMockAuthorizationService.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSMockAuthorizationService.swift",
       "kind": "StringLiteral",
       "offset": 341,
       "length": 10,
       "value": "\"PACE_PRO\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSMockAuthorizationService.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSMockAuthorizationService.swift",
       "kind": "StringLiteral",
       "offset": 382,
       "length": 17,
       "value": "\"mock-coros-user\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSMockAuthorizationService.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSMockAuthorizationService.swift",
       "kind": "StringLiteral",
       "offset": 437,
       "length": 16,
       "value": "\"open.coros.com\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSMockAuthorizationService.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSMockAuthorizationService.swift",
       "kind": "StringLiteral",
       "offset": 719,
       "length": 10,
       "value": "\"PACE_PRO\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSMockAuthorizationService.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSMockAuthorizationService.swift",
       "kind": "StringLiteral",
       "offset": 760,
       "length": 17,
       "value": "\"mock-coros-user\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSMockAuthorizationService.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSMockAuthorizationService.swift",
       "kind": "StringLiteral",
       "offset": 815,
       "length": 16,
       "value": "\"open.coros.com\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSMockAuthorizationService.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSMockAuthorizationService.swift",
       "kind": "Array",
       "offset": 1147,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSURLSessionAuthorizationService.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSURLSessionAuthorizationService.swift",
       "kind": "Dictionary",
       "offset": 310,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSURLSessionAuthorizationService.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSURLSessionAuthorizationService.swift",
       "kind": "StringLiteral",
       "offset": 384,
       "length": 2,
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSURLSessionAuthorizationService.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSURLSessionAuthorizationService.swift",
       "kind": "StringLiteral",
       "offset": 417,
       "length": 7,
       "value": "\"0.1.0\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSURLSessionAuthorizationService.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSURLSessionAuthorizationService.swift",
       "kind": "Dictionary",
       "offset": 2658,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSURLSessionAuthorizationService.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSURLSessionAuthorizationService.swift",
       "kind": "IntegerLiteral",
       "offset": 2764,
       "length": 3,
       "value": "300"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSURLSessionAuthorizationService.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSURLSessionAuthorizationService.swift",
       "kind": "IntegerLiteral",
       "offset": 2834,
       "length": 6,
       "value": "86400"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKNet\/CRSURLSessionAuthorizationService.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKNet\/CRSURLSessionAuthorizationService.swift",
       "kind": "IntegerLiteral",
-      "offset": 16690,
+      "offset": 16727,
       "length": 2,
       "value": "20"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 1189,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "Array",
       "offset": 1722,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 2137,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 2190,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "Array",
       "offset": 2705,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 3129,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "Array",
       "offset": 3659,
       "length": 2,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "StringLiteral",
       "offset": 4023,
       "length": 15,
       "value": "\"MasterSendCmd\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 4112,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "StringLiteral",
       "offset": 4128,
       "length": 5,
       "value": "\"cmd\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 4140,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "StringLiteral",
       "offset": 4160,
       "length": 12,
       "value": "\"extra_data\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "StringLiteral",
       "offset": 5357,
       "length": 12,
       "value": "\"MasterSend\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 5443,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "StringLiteral",
       "offset": 5463,
       "length": 11,
       "value": "\"send_list\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "StringLiteral",
       "offset": 6437,
       "length": 13,
       "value": "\"SlaveAckCmd\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 6524,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "StringLiteral",
       "offset": 6540,
       "length": 5,
       "value": "\"cmd\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 6552,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "StringLiteral",
       "offset": 6572,
       "length": 14,
       "value": "\"protocol_ret\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 6593,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "StringLiteral",
       "offset": 6613,
       "length": 12,
       "value": "\"extra_data\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "StringLiteral",
       "offset": 8060,
       "length": 10,
       "value": "\"SlaveAck\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 8144,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "StringLiteral",
       "offset": 8164,
       "length": 10,
       "value": "\"ack_list\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "StringLiteral",
       "offset": 9131,
       "length": 16,
       "value": "\"SlaveNotifyCmd\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 9221,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "StringLiteral",
       "offset": 9237,
       "length": 5,
       "value": "\"cmd\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 9249,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "StringLiteral",
       "offset": 9269,
       "length": 12,
       "value": "\"extra_data\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "StringLiteral",
       "offset": 10469,
       "length": 13,
       "value": "\"SlaveNotify\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 10556,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd.pb.swift",
       "kind": "StringLiteral",
       "offset": 10576,
       "length": 13,
       "value": "\"notify_list\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_def.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_def.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 2008,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_def.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_def.pb.swift",
       "kind": "StringLiteral",
       "offset": 2024,
       "length": 13,
       "value": "\"CMD_INVALID\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_def.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_def.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 2044,
       "length": 3,
       "value": "205"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_def.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_def.pb.swift",
       "kind": "StringLiteral",
       "offset": 2062,
       "length": 15,
       "value": "\"HRM_BROADCAST\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_def.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_def.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 2084,
       "length": 3,
       "value": "206"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_def.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_def.pb.swift",
       "kind": "StringLiteral",
       "offset": 2102,
       "length": 6,
       "value": "\"PING\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 1212,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 1339,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 1858,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 1981,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 2071,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
       "kind": "StringLiteral",
       "offset": 2439,
       "length": 20,
       "value": "\"HrmBroadcastSwitch\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 2533,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
       "kind": "StringLiteral",
       "offset": 2549,
       "length": 7,
       "value": "\"onoff\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 2563,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
       "kind": "StringLiteral",
       "offset": 2583,
       "length": 17,
       "value": "\"sport_start_utc\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
       "kind": "StringLiteral",
       "offset": 3821,
       "length": 10,
       "value": "\"HrSample\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 3905,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
       "kind": "StringLiteral",
       "offset": 3925,
       "length": 17,
       "value": "\"sport_start_utc\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 3949,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
       "kind": "StringLiteral",
       "offset": 3969,
       "length": 13,
       "value": "\"timestamp_s\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 3989,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_cmd_payload.pb.swift",
       "kind": "StringLiteral",
       "offset": 4009,
       "length": 12,
       "value": "\"heart_rate\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 11366,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 11382,
       "length": 31,
       "value": "\"SERVER_ENVIRONMENT_PRODUCTION\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 11420,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 11436,
       "length": 25,
       "value": "\"SERVER_ENVIRONMENT_TEST\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 11619,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 11635,
       "length": 19,
       "value": "\"SDK_ERROR_CODE_OK\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 11661,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 11677,
       "length": 33,
       "value": "\"SDK_ERROR_CODE_INVALID_ARGUMENT\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 11717,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 11733,
       "length": 31,
       "value": "\"SDK_ERROR_CODE_NOT_AUTHORIZED\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 11771,
       "length": 1,
       "value": "3"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 11787,
       "length": 33,
       "value": "\"SDK_ERROR_CODE_DEVICE_NOT_READY\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 11827,
       "length": 1,
       "value": "4"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 11843,
       "length": 32,
       "value": "\"SDK_ERROR_CODE_COMMAND_TIMEOUT\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 11882,
       "length": 1,
       "value": "5"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 11898,
       "length": 28,
       "value": "\"SDK_ERROR_CODE_ACK_TIMEOUT\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 11933,
       "length": 1,
       "value": "6"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 11949,
       "length": 35,
       "value": "\"SDK_ERROR_CODE_STREAM_INTERRUPTED\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 11991,
       "length": 1,
       "value": "7"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 12007,
       "length": 32,
       "value": "\"SDK_ERROR_CODE_REBIND_REQUIRED\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 12046,
       "length": 1,
       "value": "8"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 12062,
       "length": 35,
       "value": "\"SDK_ERROR_CODE_PERMISSION_REVOKED\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 12104,
       "length": 1,
       "value": "9"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 12120,
       "length": 32,
       "value": "\"SDK_ERROR_CODE_INVALID_PAYLOAD\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 12159,
       "length": 2,
       "value": "10"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 12176,
       "length": 37,
       "value": "\"SDK_ERROR_CODE_ENVIRONMENT_MISMATCH\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 12220,
       "length": 2,
       "value": "11"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 12237,
       "length": 38,
       "value": "\"SDK_ERROR_CODE_BLUETOOTH_POWERED_OFF\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 12282,
       "length": 2,
       "value": "12"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 12299,
       "length": 39,
       "value": "\"SDK_ERROR_CODE_BLUETOOTH_UNAUTHORIZED\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 12345,
       "length": 2,
       "value": "53"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 12362,
       "length": 39,
       "value": "\"SDK_ERROR_CODE_WATCH_USER_EXIT_LOCKED\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 12408,
       "length": 2,
       "value": "54"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 12425,
       "length": 44,
       "value": "\"SDK_ERROR_CODE_COMMAND_CHANNEL_AUTH_FAILED\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 12476,
       "length": 3,
       "value": "999"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 12494,
       "length": 31,
       "value": "\"SDK_ERROR_CODE_INTERNAL_ERROR\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 12532,
       "length": 4,
       "value": "1001"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 12551,
       "length": 29,
       "value": "\"SDK_ERROR_CODE_SERVER_ERROR\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 12587,
       "length": 4,
       "value": "1019"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 12606,
       "length": 37,
       "value": "\"SDK_ERROR_CODE_SERVER_LOGIN_INVALID\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 12650,
       "length": 4,
       "value": "1031"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 12669,
       "length": 41,
       "value": "\"SDK_ERROR_CODE_SERVER_INVALID_PARAMETER\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 12717,
       "length": 4,
       "value": "1037"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 12736,
       "length": 31,
       "value": "\"SDK_ERROR_CODE_SERVER_NO_DATA\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 12774,
       "length": 4,
       "value": "1042"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 12793,
       "length": 36,
       "value": "\"SDK_ERROR_CODE_SERVER_RATE_LIMITED\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 12836,
       "length": 4,
       "value": "1047"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 12855,
       "length": 39,
       "value": "\"SDK_ERROR_CODE_SERVER_INVALID_CONTENT\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 12901,
       "length": 4,
       "value": "5002"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 12920,
       "length": 38,
       "value": "\"SDK_ERROR_CODE_SERVER_INVALID_CLIENT\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 12965,
       "length": 4,
       "value": "5004"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 12984,
       "length": 37,
       "value": "\"SDK_ERROR_CODE_SERVER_INVALID_SCOPE\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 13028,
       "length": 4,
       "value": "5026"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 13047,
       "length": 31,
       "value": "\"SDK_ERROR_CODE_SERVER_EXPIRED\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 13085,
       "length": 4,
       "value": "5030"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 13104,
       "length": 41,
       "value": "\"SDK_ERROR_CODE_SERVER_INVALID_SIGNATURE\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 13152,
       "length": 4,
       "value": "5031"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 13171,
       "length": 39,
       "value": "\"SDK_ERROR_CODE_SERVER_KEY_UNAVAILABLE\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 13217,
       "length": 4,
       "value": "5032"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 13236,
       "length": 35,
       "value": "\"SDK_ERROR_CODE_SERVER_EXPIRED_KEY\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 13278,
       "length": 4,
       "value": "5033"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 13297,
       "length": 43,
       "value": "\"SDK_ERROR_CODE_SERVER_UNAUTHORIZED_DEVICE\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 13347,
       "length": 4,
       "value": "5034"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 13366,
       "length": 43,
       "value": "\"SDK_ERROR_CODE_SERVER_DEVICE_DISCONNECTED\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 13416,
       "length": 4,
       "value": "5035"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 13435,
       "length": 50,
       "value": "\"SDK_ERROR_CODE_SERVER_INVALID_AUTHORIZED_DEVICES\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 13492,
       "length": 4,
       "value": "5036"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 13511,
       "length": 35,
       "value": "\"SDK_ERROR_CODE_SERVER_USER_DENIED\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 13553,
       "length": 4,
       "value": "5037"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 13572,
       "length": 37,
       "value": "\"SDK_ERROR_CODE_SERVER_INVALID_GRANT\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 13616,
       "length": 4,
       "value": "5038"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 13635,
       "length": 37,
       "value": "\"SDK_ERROR_CODE_SERVER_GRANT_REVOKED\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "IntegerLiteral",
       "offset": 13679,
       "length": 4,
       "value": "9015"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKProto\/Generated\/ble_sdk_common.pb.swift",
       "kind": "StringLiteral",
       "offset": 13698,
       "length": 40,
       "value": "\"SDK_ERROR_CODE_SERVER_DEVICE_NOT_EXIST\""
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKStorage\/CRSInMemoryGrantStore.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKStorage\/CRSInMemoryGrantStore.swift",
       "kind": "Dictionary",
       "offset": 121,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS\/Sources\/CRSPartnerBLESDKStorage\/CRSKeychainGrantStore.swift",
+      "filePath": "\/Users\/yangxi\/Work\/Code\/git\/CRSPartnerBLESDK-iOS-auth-reentry\/Sources\/CRSPartnerBLESDKStorage\/CRSKeychainGrantStore.swift",
       "kind": "StringLiteral",
       "offset": 140,
       "length": 28,

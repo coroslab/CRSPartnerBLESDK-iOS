@@ -77,7 +77,7 @@ platform :ios, '14.0'
 
 target 'YourApp' do
   use_frameworks!
-  pod 'CRSPartnerBLESDK', '~> 0.1.4'
+  pod 'CRSPartnerBLESDK', :git => 'https://github.com/coroslab/CRSPartnerBLESDK-iOS.git', :tag => '0.1.5'
 end
 ```
 
@@ -168,6 +168,14 @@ func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
 ```
 
 After receiving the callback URI, forward it as-is to `handleOpenURL(_:)`. Do not parse, modify, or persist it.
+
+### 5.2 Repeated calls and retries (0.1.5+)
+
+No new API or changes to existing call sites are required. Multiple `authorize()` calls on the same SDK instance wait for the same authorization result. Once the link is ready, another call reopens COROS using that link. URL opens already in flight and taps less than one second apart are coalesced.
+
+Cancelling one caller's Task only cancels that caller's wait, leaving the shared flow available for later calls. The flow expires after five minutes or the earlier signed-link deadline; calling again after expiry starts a fresh authorization. Stale callbacks and timers cannot finish a newer flow.
+
+The host app must still forward callback URLs unchanged as described in section 5.1, using the same SDK instance that started authorization. Updating the SDK does not replace missing host-side URL forwarding.
 
 ## 6. List Authorized Devices
 

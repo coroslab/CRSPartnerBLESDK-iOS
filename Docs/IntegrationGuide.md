@@ -77,7 +77,7 @@ platform :ios, '14.0'
 
 target 'YourApp' do
   use_frameworks!
-  pod 'CRSPartnerBLESDK', '~> 0.1.4'
+  pod 'CRSPartnerBLESDK', :git => 'https://github.com/coroslab/CRSPartnerBLESDK-iOS.git', :tag => '0.1.5'
 end
 ```
 
@@ -168,6 +168,14 @@ func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>)
 ```
 
 Partner App 收到 Callback URI 后，只需要原样转交给 `handleOpenURL(_:)`，不要解析、修改或持久化。
+
+### 5.2 重复调用与重试（0.1.5 起）
+
+无需增加接口或修改现有调用方式。同一 SDK 实例的多次 `authorize()` 会等待同一轮授权结果；授权链接准备好后，再次调用可复用该链接唤醒 COROS。正在执行的唤醒和间隔不足 1 秒的快速连点会合并处理。
+
+取消某个调用方的 Task 只取消该调用方的等待，不中断共享流程。等待流程在 5 分钟或更早的签名链接有效期后过期；过期后再次调用会创建新一轮授权。旧回调和旧定时器不会结束新流程。
+
+宿主 App 仍需按 5.1 节原样转交回跳 URL，并使用发起授权的同一个 SDK 实例。升级不会修复宿主遗漏 URL 回调转交的问题。
 
 ## 6. 获取授权设备
 
